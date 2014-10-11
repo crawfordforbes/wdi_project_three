@@ -1,20 +1,16 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require 'pry'
-require 'httparty'
-require_relative './db/connection'
-require_relative './lib/???'
-require 'active_support'
+require 'json'
+require 'haml'
 
-after do
-  ActiveRecord::Base.connection.close
-end
+# call in models 
 
 before do
   content_type :json
 end
 
 get("/") do
-
+  content_type :html 
+  haml :index 
 end
 
