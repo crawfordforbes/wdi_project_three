@@ -5,8 +5,12 @@ FreeDay is an activities coordinating application. It helps facilitate making de
 
 FreeDay was made by [Lisa Wells][lw], [Clayton Albachten][ca], [Crawford Forbes][cf], [Heidi Williams-Foy][hw] and [Brenda Dargan-Levy][bd] over the course of a long weekend, as part of General Assembly's Web Developer's Immersive.  
 
+
+<!-- reference-style markdown links 
+in order of apperance -->
+
 [lw]: https://linkedin/in/lisajwells
 [ca]: http://claytonalbachten.com/ 
 [cf]: http://crawfordforbes.com/
-[hw]: https://github.com/heidiw
+[hw]: https://github.com/HeidiW
 [bd]: https://github.com/brendee 
