@@ -9,8 +9,8 @@ FreeDay was made by [Lisa Wells][lw], [Clayton Albachten][ca], [Crawford Forbes]
 <!-- reference-style markdown links 
 in order of apperance -->
 
-[lw]: https://linkedin/in/lisajwells
-[ca]: http://claytonalbachten.com/ 
-[cf]: http://crawfordforbes.com/
-[hw]: https://github.com/HeidiW
-[bd]: https://github.com/brendee 
+[lw]: https://linkedin/in/lisajwells "Lisa Well's professional LinkedIn profile"
+[ca]: http://claytonalbachten.com/ "Clayton Albachten's personal website"
+[cf]: http://crawfordforbes.com/ "Crawford Forbe's personal website"
+[hw]: https://github.com/HeidiW "Heidi Williams-Foy's GitHub profile"
+[bd]: https://github.com/brendee "Brenda Dargan-Levy's GitHub profile"
