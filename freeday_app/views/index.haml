@@ -2,20 +2,40 @@
 %html{:lang => "en"}
   %head 
     %meta{:charset => "uft-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
     %title FreeDay 
     %script{:src => "https://code.jquery.com/jquery-2.1.1.min.js"}
 
     %link{:href => "/bootstrap/css/bootstrap.css", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "/bootstrap/css/bootstrap-theme.css", :rel => "stylesheet", :type => "text/css"}
-
-    %link{:href => "/stylesheet/styles.css", :type => "text/css", :rel => "stylesheet"}
-  %body
-    %header
-      %h1 FreeDay
-      %h2 When Are You Free?
-    %main
-      %nav
-        %button.create Create
-        %button.join Join 
+    
+    %link{:href => "/stylesheets/styles.css", :type => "text/css", :rel => "stylesheet"}
+    %script{:type => "text/javascript", :src => "/bootstrap/js/bootstrap.js"}
     %script{:type => "text/javascript", :src => "/javascripts/scripts.js"}
+  %body
+    .container
+      / this begins the splash page view
+      .splash_view
+        %row
+          %header.col-md-24
+            %h1 FreeDay
+            %h2 When Are You Free?
+        
+        %main
+          %nav
+            %row  
+              .col-md-12
+                %button.create Create an Event
+              .col-md-12
+                %button.join Join an Event
+      / this ends the splash page view
+      %row 
+        %footer.col-md-24
+          %nav
+            %ul
+              %li Home
+              %li About FreeDay
+              %li Contact
+
   
