@@ -13,7 +13,7 @@ DROP TABLE people;
 CREATE TABLE events(
   id SERIAL PRIMARY KEY, 
   name VARCHAR(150),
-  zipcode integer, 
+  zipcode VARCHAR(5), 
   deadline DATE 
 );
 
@@ -22,9 +22,9 @@ CREATE TABLE activities(
   event_id INTEGER, 
   upvotes INTEGER, 
   name VARCHAR(500),
-  address varchar(500), -- combo of city and address
-  url varchar(500),
-  description text,
+  address VARCHAR(500), -- combo of city and address
+  url VARCHAR(500),
+  description TEXT,
   window_id INTEGER -- activity date
 );
 
