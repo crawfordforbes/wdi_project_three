@@ -29,13 +29,19 @@
             %nav
               %row  
                 .col-md-4.col-md-offset-8
-                  %a{:href => "#", :class => "create_button"}
-                    %img{:src => "./images/create_icon.png", :class => "center-block"}
+                  
+                  %a{:href => "#"}
+                    %img{:src => "./images/create_icon.png", onMouseOver="createMouseRollover(this)" onMouseOut="createMouseOut(this)"}
                     %h5.center Create an Event
+                    
                 .col-md-4
-                  %a{:href => "#", :class => "join_button"}
-                    %img{:src => "./images/join_icon.png", :class => "center-block"} 
+
+                  %a{:href => "#"} 
+                    %img{:src => "./images/join_icon.png", onMouseOver="joinMouseRollover(this)" onMouseOut="joinMouseOut(this)"}
                     %h5.center Join an Event
+
+
+
         / ++++ this ends the splash page view
 
         / ++++ this begins the create-an-event view
