@@ -10,13 +10,13 @@ Person.delete_all
 ev = Event.create({
 	name: "Ladies Night",
 	zipcode: "90015",
-	deadline: 2014-10-17
+	deadline: "2014-10-17"
 	})
 
 wi = Window.create({
 	event_id: ev.id,
 	upvotes: 0,
-	day: 2014-11-3
+	day: "2014-11-3"
 	})
 
 ac = Activity.create({
