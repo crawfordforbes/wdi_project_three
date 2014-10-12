@@ -16,214 +16,207 @@
 </head>
 
 <body>
-  <div id="wrap">
-    <div class="container">
-      <!-- +++++ this begins the splash page view -->
-      <div class="splash_view">
+  <div class="container">
+    <!-- +++++ this begins the splash page view -->
+    <div class="splash_view">
+      <row>
+        <header class="col-md-24">
+          <h1 class="center">free<span>Day</span></h1>
+          <h3 class="center">What day are you free?</h3>
+        </header>
+      </row>
+      <nav>
         <row>
-          <header class="col-md-24">
-            <h1 class="center">free<span>Day</span></h1>
-            <h3 class="center">What day are you free?</h3>
-          </header>
-        </row>
-        <nav>
-          <row>
-            <div class="col-md-4 col-md-offset-8">
-              <a href="#">
-                <img src="./images/create_icon.png" onMouseOver="createMouseRollover(this)" onMouseOut="createMouseOut(this)">
-                <h5 class="center">Create an Event</h5>
-              </a>
-            </div>
-          </row>
-          <row>
-            <div class="col-md-4 col-md-offset-8">
-              <a href="#">
-                <img src="./images/join_icon.png" onMouseOver="joinMouseRollover(this)" onMouseOut="joinMouseOut(this)">
-                <h5 class="center">Join an Event</h5>
-              </a>
-            </div>
-          </row>
-        </nav>
-
-      </div>
-      <!-- end of splash_view -->
-
-      <!-- begin create an event view -->
-      <div class="create_event_view noshow">
-        <row>
-          <header class="col-md-24">
-            <h2>free<span>Day</span></h2>
-            <h3>Propose an event</h3>
-          </header>
-        </row>
-        <row>
-          <div class="col-md-24">
-            <nav>
-              <ul>
-                <li>Home</li>
-                <li>Create an event</li>
-                <li>Join an event</li>
-                <li>About</li>
-              </ul>
-            </nav>
+          <div class="col-md-4 col-md-offset-8">
+            <a href="#">
+              <img src="./images/create_icon.png" onMouseOver="createMouseRollover(this)" onMouseOut="createMouseOut(this)">
+              <h5 class="center">Create an Event</h5>
+            </a>
           </div>
         </row>
-
-        <main>
-          <row>
-            <div class="col-md-12 col-md-offset-6">
-              <form>
-                <label>Event Name:</label>
-                <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
-              </form>
-            </div>
-          </row>
-          <row>
-            <div class="col-md-12">
-              <form>
-                <label>Choose Dates:</label>
-                <input id="event_date" name="date" type="datetime-local">
-              </form>
-            </div>
-          </row>
-          <row>
-            <div class="col-md-8">
-              <h2>Invite People:</h2>
-              <ul>
-                <li>
-                  <input type="checkbox">Fred!
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-8">
-              <h3>Somebody Else?</h3>
-              <form class="new_person">
-                <label>Name:</label>
-                <input id="new_person_name" type="text" name="name">
-                <button class="create_button">Submit</button>
-              </form>
-            </div>
-          </row>
-
-        </main>
-
-      </div>
-      
-      <!-- end create an event view -->
-
-      <!-- begin events view -->
-
-      <div class="events_view noshow">
         <row>
-          <header class="col-md-24">
-            <h2>free<span>Day</span></h2>
-            <h3>Choose an event</h3>
-          </header>
-        </row>
-        <row>
-          <div class="col-md-24">
-            <nav>
-              <ul>
-                <li>Home</li>
-                <li>Create an event</li>
-                <li>Join an event</li>
-                <li>About</li>
-              </ul>
-            </nav>
+          <div class="col-md-4 col-md-offset-8">
+            <a href="#">
+              <img src="./images/join_icon.png" onMouseOver="joinMouseRollover(this)" onMouseOut="joinMouseOut(this)">
+              <h5 class="center">Join an Event</h5>
+            </a>
           </div>
         </row>
-        <main>
-          <row>
-            <div class="col-md-16">
-              <p>big picture of talking bear</p>
-            </div>
+      </nav>
 
-            <div class="col-md-8">
-              <nav>
-                <p>list of clickable links to display individual events</p>
-              </nav>
-            </div>
-              
-            </row>
-          </row>
-
-
-        </main>
-
-      </div>
-
-
-      <!-- end events view -->
-
-      <!-- begin individual event view -->
-
-      <div class="event_view noshow">
-        <row>
-          <header class="col-md-24">
-            <h2>free<span>Day</span></h2>
-            <h3>About this event</h3>
-          </header>
-        </row>
-        <row>
-          <div class="col-md-24">
-            <nav>
-              <ul>
-                <li>Home</li>
-                <li>Create an event</li>
-                <li>Join an event</li>
-                <li>About</li>
-              </ul>
-            </nav>
-          </div>
-        </row>
-
-        <main>
-          <row> 
-            <div class="col-md-3">
-              <h4>Who's Invited</h4>
-              <p>list of invitees with indic of check-in</p>
-            </div>
-            <div class="col-md-11">
-              <h4>Who's Invited</h4>
-              <p>list of invitees with indic of check-in</p>
-            </div>
-            <div class="col-md-2">
-              <h4>Who's Invited</h4>
-              <p>list of invitees with indic of check-in</p>
-            </div>
-            <div class="col-md-8">
-              <p>list of clickable events</p>
-            </div>
-          </row>
-        </main>
-<!-- end individual event view -->
-
-
-      
     </div>
-    <!-- end of container div -->
-    
+    <!-- end of splash_view -->
 
+    <!-- begin create an event view -->
+    <div class="create_event_view noshow">
+      <row>
+        <header class="col-md-24">
+          <h2>free<span>Day</span></h2>
+          <h3>Propose an event</h3>
+        </header>
+      </row>
+      <row>
+        <div class="col-md-24">
+          <nav>
+            <ul>
+              <li>Home</li>
+              <li>Create an event</li>
+              <li>Join an event</li>
+              <li>About</li>
+            </ul>
+          </nav>
+        </div>
+      </row>
 
-  <!-- end of wrap div -->
-  </div>  
+      <main>
+        <row>
+          <div class="col-md-12 col-md-offset-6">
+            <form>
+              <label>Event Name:</label>
+              <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
+            </form>
+          </div>
+        </row>
+        <row>
+          <div class="col-md-12">
+            <form>
+              <label>Choose Dates:</label>
+              <input id="event_date" name="date" type="datetime-local">
+            </form>
+          </div>
+        </row>
+        <row>
+          <div class="col-md-8">
+            <h2>Invite People:</h2>
+            <ul>
+              <li>
+                <input type="checkbox">Fred!
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <h3>Somebody Else?</h3>
+            <form class="new_person">
+              <label>Name:</label>
+              <input id="new_person_name" type="text" name="name">
+              <button class="create_button">Submit</button>
+            </form>
+          </div>
+        </row>
 
-  <footer class="col-md-24">
-    <div class="container">
-      <ul>
-        <li>Home</li>
-        <li>About freeDay</li>
-        <li>Contact</li>
-      </ul>
+      </main>
 
     </div>
     
-  </footer>
+    <!-- end create an event view -->
+
+    <!-- begin events view -->
+
+    <div class="events_view noshow">
+      <row>
+        <header class="col-md-24">
+          <h2>free<span>Day</span></h2>
+          <h3>Choose an event</h3>
+        </header>
+      </row>
+      <row>
+        <div class="col-md-24">
+          <nav>
+            <ul>
+              <li>Home</li>
+              <li>Create an event</li>
+              <li>Join an event</li>
+              <li>About</li>
+            </ul>
+          </nav>
+        </div>
+      </row>
+      <main>
+        <row>
+          <div class="col-md-16">
+            <p>big picture of talking bear</p>
+          </div>
+
+          <div class="col-md-8">
+            <nav>
+              <p>list of clickable links to display individual events</p>
+            </nav>
+          </div>
+          
+        </row>
+
+
+      </main>
+
+    </div>
+
+    <!-- end events view -->
+
+    <!-- begin individual event view -->
+
+    <div class="event_view noshow">
+      <row>
+        <header class="col-md-24">
+          <h2>free<span>Day</span></h2>
+          <h3>About this event</h3>
+        </header>
+      </row>
+      <row>
+        <div class="col-md-24">
+          <nav>
+            <ul>
+              <li>Home</li>
+              <li>Create an event</li>
+              <li>Join an event</li>
+              <li>About</li>
+            </ul>
+          </nav>
+        </div>
+      </row>
+
+      <main>
+        <row> 
+          <div class="col-md-3">
+            <h4>Who's Invited</h4>
+            <p>list of invitees with indic of check-in</p>
+          </div>
+          <div class="col-md-11">
+            <h4>Who's Invited</h4>
+            <p>list of invitees with indic of check-in</p>
+          </div>
+          <div class="col-md-2">
+            <h4>Who's Invited</h4>
+            <p>list of invitees with indic of check-in</p>
+          </div>
+          <div class="col-md-8">
+            <p>list of clickable events</p>
+          </div>
+        </row>
+      </main>
+
+
+    </div>  
+    <!-- end individual event view -->
+    
+    
 
 
 
+    <footer class="col-md-24">
+      <div>
+        <ul>
+          <li>Home</li>
+          <li>About freeDay</li>
+          <li>Contact</li>
+        </ul>
+
+      </div>
+    </footer>
 
 
+
+  </div>
+  <!-- end of container -->
 </body>
 </html>
 
