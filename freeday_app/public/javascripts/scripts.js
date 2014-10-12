@@ -1,4 +1,4 @@
-$(function(){
+// $(function(){
 
 // Splash page navigation rollover
    function createMouseRollover(createIcon) {
@@ -19,4 +19,4 @@ $(function(){
 
 // 
 
-});
+// });
