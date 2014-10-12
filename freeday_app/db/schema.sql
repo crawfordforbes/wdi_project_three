@@ -12,26 +12,27 @@ DROP TABLE people;
 
 CREATE TABLE events(
   id SERIAL PRIMARY KEY, 
-  name VARCHAR(150), 
-  deliberation_span_end DATE -- best data type here?  
+  name VARCHAR(150),
+  zipcode INTEGER, 
+  deadline DATE 
 );
 
 CREATE TABLE activities(
-  -- activities will need to be changed
-  -- to reflect the API reports 
-  -- from Brenda & Crawford 
   id SERIAL PRIMARY KEY, 
   event_id INTEGER, 
   upvotes INTEGER, 
-  name VARCHAR(150), 
-  time DATE -- best data type here? 
+  name VARCHAR(500),
+  address VARCHAR(500), -- combo of city and address
+  url VARCHAR(500),
+  description TEXT,
+  window_id INTEGER -- activity date
 );
 
 CREATE TABLE windows(
   id SERIAL PRIMARY KEY, 
   event_id INTEGER, 
   upvotes INTEGER, 
-  day_available DATE 
+  day DATE 
 ); 
 
 CREATE TABLE memberships(
@@ -39,7 +40,6 @@ CREATE TABLE memberships(
   people_id INTEGER, 
   event_id INTEGER 
 ); 
-
 
 CREATE TABLE people(
   id SERIAL PRIMARY KEY, 
