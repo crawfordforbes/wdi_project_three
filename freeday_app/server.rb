@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'json'
 require 'haml'
+require 'bundler'
 
 # call in models 
 
