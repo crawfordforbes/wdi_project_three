@@ -23,8 +23,8 @@ end
 post("/events") do
   event_json = JSON.parse(request.body.read)  
   Event.create(
-        name: event_json["name"],
-     zipcode: event_json["zipcode"],
+    name: event_json["name"],
+    zipcode: event_json["zipcode"],
     deadline: Date.new(event_json["deadline"])
     ).to_json
 end 
@@ -63,21 +63,27 @@ end
 
 # activities # 
 
-post("/activities/:id") do
+post("/activities") do
 
-  zipcode = Event.where(id: params[:id]).zipcode
-  startdate = Window.where(event_id: params[:id]).day
+
+  # create zipcode and dates for api calls
+  zipcode = params[:zipcode]
+  startdate = params[:startdate]
   endDay = startdate.split("-")[2].to_i + 1
   endDate = date.split("-")[0] + "-" + date.split("-")[1] + "-" + endDay.to_s
 
+  # converts zipcode to lat long for eventbrite api
   longlat = HTTParty.get("http://zipcodedistanceapi.redline13.com/rest/hDnZEdMTiTMIdufkYObXQUY134PG6pnn2KnGYaAh4nZhRfCQ3NNTIMVLQKrW9Okc/info.json/#{zipcode}/degrees")
 
   lat = longlat["lat"]
   long = longlat["lng"]
 
+  # get events
   response = HTTParty.get("https://www.eventbriteapi.com/v3/events/search/?location.within=10mi&location.latitude=#{lat}&location.longitude=#{long}&start_date.range_start=#{date}T12%3A30%3A42Z&start_date.range_end=#{endDate}T12%3A30%3A42Z&token=3BS25F7EIU2IIB4YWQWF")
+
+  # get 5 events, if the api is missing info autofill an error message
   eventBritecounter = 0
-  while counter < 6
+  while eventBritecounter < 6
     if response["events"][eventBritecounter]["venue"]["location"]["address_1"] != nil
       street = response["events"][eventBritecounter]["venue"]["location"]["address_1"]
     else street = "Street not found"
@@ -99,6 +105,7 @@ post("/activities/:id") do
     else eventUrl = "URL not found"
     end
 
+    #create the event database entry
     Activity.create({
       event_id: params[:id],
       upvotes: 0,
@@ -109,7 +116,7 @@ post("/activities/:id") do
       window_id: Window.where(event_id: params[:id]).id
       })
 
-  eventBritecounter += 1
+    eventBritecounter += 1
   end
 
 
@@ -138,7 +145,7 @@ post("/activities/:id") do
       eventUrl = eventfulResponse["events"]["event"][eventfulCounter]["url"]
     else eventUrl = "URL not found"
     end
-Activity.create({
+    Activity.create({
       event_id: params[:id],
       upvotes: 0,
       name: eventName,
@@ -147,8 +154,8 @@ Activity.create({
       url: eventUrl,
       window_id: Window.where(event_id: params[:id]).id
       })
-eventfulCounter +=1
-end
+    eventfulCounter +=1
+  end
 
 
   opentableResponse = HTTParty.get("http://opentable.herokuapp.com/api/restaurants?zip=#{zipcode}")
@@ -168,7 +175,7 @@ end
     else eventName = "Name not found"
     end
     
-      eventDescription = "Eat something delicious."
+    eventDescription = "Eat something delicious."
     
     
     if opentableResponse["restaurants"][opentableCounter]["reserve_url"] != nil
@@ -176,7 +183,7 @@ end
     else eventUrl = "URL not found"
     end
 
-Activity.create({
+    Activity.create({
       event_id: params[:id],
       upvotes: 0,
       name: eventName,
@@ -186,25 +193,33 @@ Activity.create({
       window_id: Window.where(event_id: params[:id]).id
       })
 
-opentableCounter +=1
+    opentableCounter +=1
+  end
+
+
+
+
+
+  # activity_json = JSON.parse(request.body.read) 
+  # Activity.create(
+  #  event_id: activity_json["event_id"], 
+  #  upvotes: 1, 
+  #  name: activity_json["name"], 
+  #  address: activity_json["address"], 
+  #  url: activity_json["url"], 
+  #  description: activity_json["description"], 
+  #  window_id: activity_json["window_id"]
+
+  #  ).to_json  
+end 
+
+get("/activities") do 
+  Activity.all.to_json
 end
 
-
-
-
-
-  activity_json = JSON.parse(request.body.read) 
-  Activity.create(
-       event_id: activity_json["event_id"], 
-        upvotes: 1, 
-           name: activity_json["name"], 
-        address: activity_json["address"], 
-            url: activity_json["url"], 
-    description: activity_json["description"], 
-      window_id: activity_json["window_id"]
-
-    ).to_json  
-end 
+get("/activities/:id") do 
+  Activity.where(window_id: params[:id]).to_json
+end
 
 put("/activities/:id") do 
   the_activity = Activity.find_by_id(params[:id])
@@ -218,8 +233,8 @@ post("/windows") do
   window_json = JSON.parse(request.body.read)  
   Window.create(
     event_id: window_json["event_id"],
-     upvotes: 0,
-         day: Date.new(window_json["day"])
+    upvotes: 0,
+    day: Date.new(window_json["day"])
     ).to_json
 end 
 
@@ -235,7 +250,7 @@ post("/memberships") do
   membership_json = JSON.parse(request.body.read)  
   Membership.create(
     people_id: membership_json["people_id"],
-     event_id: membership_json["event_id"]
+    event_id: membership_json["event_id"]
     ).to_json 
 end 
 
@@ -248,9 +263,9 @@ end
 post("/people") do
   person_json = JSON.parse(request.body.read)  
   Person.create(
-     name: person_json["name"], 
-    email: person_json["email"]
-    ).to_json
+   name: person_json["name"], 
+   email: person_json["email"]
+   ).to_json
 end 
 
 get("/people/:id") do 
