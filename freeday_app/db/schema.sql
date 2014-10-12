@@ -25,7 +25,8 @@ CREATE TABLE activities(
   address VARCHAR(500), -- combo of city and address
   url VARCHAR(500),
   description TEXT,
-  window_id INTEGER -- activity date
+  window_id INTEGER, -- activity date
+  selected boolean
 );
 
 CREATE TABLE windows(

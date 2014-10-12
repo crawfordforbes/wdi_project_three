@@ -63,7 +63,136 @@ end
 
 # activities # 
 
-post("/activities") do
+post("/activities/:id") do
+
+  zipcode = Event.where(id: params[:id]).zipcode
+  startdate = Window.where(event_id: params[:id]).day
+  endDay = startdate.split("-")[2].to_i + 1
+  endDate = date.split("-")[0] + "-" + date.split("-")[1] + "-" + endDay.to_s
+
+  longlat = HTTParty.get("http://zipcodedistanceapi.redline13.com/rest/hDnZEdMTiTMIdufkYObXQUY134PG6pnn2KnGYaAh4nZhRfCQ3NNTIMVLQKrW9Okc/info.json/#{zipcode}/degrees")
+
+  lat = longlat["lat"]
+  long = longlat["lng"]
+
+  response = HTTParty.get("https://www.eventbriteapi.com/v3/events/search/?location.within=10mi&location.latitude=#{lat}&location.longitude=#{long}&start_date.range_start=#{date}T12%3A30%3A42Z&start_date.range_end=#{endDate}T12%3A30%3A42Z&token=3BS25F7EIU2IIB4YWQWF")
+  eventBritecounter = 0
+  while counter < 6
+    if response["events"][eventBritecounter]["venue"]["location"]["address_1"] != nil
+      street = response["events"][eventBritecounter]["venue"]["location"]["address_1"]
+    else street = "Street not found"
+    end
+    if response["events"][eventBritecounter]["venue"]["location"]["city"] != nil
+      city = response["events"][eventBritecounter]["venue"]["location"]["city"]
+    else city = "City not found"
+    end
+    if response["events"][eventBritecounter]["name"]["text"] != nil
+      eventName = response["events"][eventBritecounter]["name"]["text"]
+    else eventName = "Name not found"
+    end
+    if response["events"][eventBritecounter]["description"]["text"] != nil
+      eventDescription = response["events"][eventBritecounter]["description"]["text"][0...200] + "..."
+    else eventDescription = "Description not found"
+    end
+    if response["events"][eventBritecounter]["url"] != nil
+      eventUrl = response["events"][eventBritecounter]["url"]
+    else eventUrl = "URL not found"
+    end
+
+    Activity.create({
+      event_id: params[:id],
+      upvotes: 0,
+      name: eventName,
+      description: eventDescription,
+      address: street + ", " + city,
+      url: eventUrl,
+      window_id: Window.where(event_id: params[:id]).id
+      })
+
+  eventBritecounter += 1
+  end
+
+
+  eventfulResponse = HTTParty.get("http://api.eventful.com/json/events/search/?location=#{zipcode}&start_time=#{date}&end_time=#{endDate}&app_key=PXgMsX9vnshjM5Wv")
+  eventfulResponse = JSON.parse(response)
+
+  eventfulCounter = 0 
+  while eventfulCounter < 6
+    if eventfulResponse["events"]["event"][eventfulCounter]["venue_address"] != nil
+      street = eventfulResponse["events"]["event"][eventfulCounter]["venue_address"]
+    else street = "Street not found"
+    end
+    if eventfulResponse["events"]["event"][eventfulCounter]["city_name"] != nil
+      city = eventfulResponse["events"]["event"][eventfulCounter]["city_name"]
+    else city = "City not found"
+    end
+    if eventfulResponse["events"]["event"][eventfulCounter]["title"]  != nil
+      eventName = eventfulResponse["events"]["event"][eventfulCounter]["title"] 
+    else eventName = "Name not found"
+    end
+    if eventfulResponse["events"]["event"][eventfulCounter]["description"] != nil
+      eventDescription = eventfulResponse["events"]["event"][eventfulCounter]["description"][0...200] + "..."
+    else eventDescription = "Description not found"
+    end
+    if eventfulResponse["events"]["event"][eventfulCounter]["url"] != nil
+      eventUrl = eventfulResponse["events"]["event"][eventfulCounter]["url"]
+    else eventUrl = "URL not found"
+    end
+Activity.create({
+      event_id: params[:id],
+      upvotes: 0,
+      name: eventName,
+      description: eventDescription,
+      address: street + ", " + city,
+      url: eventUrl,
+      window_id: Window.where(event_id: params[:id]).id
+      })
+eventfulCounter +=1
+end
+
+
+  opentableResponse = HTTParty.get("http://opentable.herokuapp.com/api/restaurants?zip=#{zipcode}")
+
+  opentableCounter = 0 
+  while opentableCounter < 6
+    if opentableResponse["restaurants"][opentableCounter]["address"]  != nil
+      street = opentableResponse["restaurants"][opentableCounter]["address"] 
+    else street = "Street not found"
+    end
+    if opentableResponse["restaurants"][opentableCounter]["city"]  != nil
+      city = opentableResponse["restaurants"][opentableCounter]["city"] 
+    else city = "City not found"
+    end
+    if opentableResponse["restaurants"][opentableCounter]["name"]  != nil
+      eventName = opentableResponse["restaurants"][opentableCounter]["name"] 
+    else eventName = "Name not found"
+    end
+    
+      eventDescription = "Eat something delicious."
+    
+    
+    if opentableResponse["restaurants"][opentableCounter]["reserve_url"] != nil
+      eventUrl = opentableResponse["restaurants"][opentableCounter]["reserve_url"]
+    else eventUrl = "URL not found"
+    end
+
+Activity.create({
+      event_id: params[:id],
+      upvotes: 0,
+      name: eventName,
+      description: eventDescription,
+      address: street + ", " + city,
+      url: eventUrl,
+      window_id: Window.where(event_id: params[:id]).id
+      })
+
+opentableCounter +=1
+end
+
+
+
+
+
   activity_json = JSON.parse(request.body.read) 
   Activity.create(
        event_id: activity_json["event_id"], 
