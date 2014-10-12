@@ -2,12 +2,9 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'json'
 require 'haml'
-<<<<<<< HEAD
-require 'bundler'
-=======
 require_relative './db/connection.rb'
 require_relative './db/models.rb'
->>>>>>> 1f52ea3013c3ff97bdbc2737167ef99e3ab3fe4c
+
 
 # call in models 
 
