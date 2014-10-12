@@ -1,0 +1,60 @@
+### FONT COLLECTIONS ###
+
+Sans Serif -- clean, no-frills
+https://www.google.com/fonts#ReviewPlace:refine/Collection:Fresca|Abel|Lato|Quicksand|Wire+One|Josefin+Sans|Ubuntu+Condensed|Open+Sans|Francois+One|Fjalla+One|Pompiere
+
+Script -- casual/playful
+https://www.google.com/fonts#ReviewPlace:refine/Collection:Grand+Hotel|Pacifico|Dancing+Script|Courgette|Chewy|Handlee|Cookie|Oregano|Mouse+Memoirs
+
+Serif -- mix of clean and casual
+https://www.google.com/fonts#ReviewPlace:refine/Collection:Nixie+One|Oldenburg|Fredericka+the+Great|Maiden+Orange|Yeseva+One|Life+Savers|Mountains+of+Christmas|Purple+Purse
+
+### GLYPHICONS ###
+
+Check mark (black on white) - glyphicon glyphicon-ok
+Check mark (white on black) - glyphicon glyphicon-ok-sign
+Clock - glyphicon glyphicon-time
+Calendar - glyphicon glyphicon-calendar
+
+Thumbs up - glyphicon glyphicon-thumbs-up
+Thumbs down - glyphicon glyphicon-thumbs-down
+http://www.flaticon.com/packs/like-it
+
+Arrow up (white on black) - glyphicon glyphicon-circle-arrow-up
+Arrow down (white on black) - glyphicon glyphicon-circle-arrow-down
+
+### ICON PACKS ###
+All themes: http://www.flaticon.com/packs/
+
+Serif:
+http://www.flaticon.com/packs/basic
+http://www.flaticon.com/packs/universal-05
+http://www.flaticon.com/packs/essentials
+http://www.flaticon.com/packs/ios7-ultralight
+http://www.flaticon.com/packs/clean-icons
+http://www.flaticon.com/packs/thin-round-icons
+http://www.flaticon.com/packs/universal-13
+http://www.flaticon.com/packs/universal-02
+http://www.flaticon.com/packs/font-awesome
+
+For use with Script or Serif:
+http://www.flaticon.com/packs/hand-drawn-education
+http://www.flaticon.com/packs/universal-08
+http://www.flaticon.com/packs/universal-12
+http://www.flaticon.com/packs/chapps
+http://www.flaticon.com/packs/handmade
+
+
+### COLORS ###
+
+COOL: 
+#2980b9
+#2e8ece
+#2c3e50
+
+
+WARM:
+#e98b39
+#ec5e00
+#d14233
+
