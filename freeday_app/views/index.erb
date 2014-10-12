@@ -16,9 +16,11 @@
 </head>
 
 <body>
+
   <div class="container">
+
     <!-- +++++ this begins the splash page view -->
-    <div class="splash_view">
+    <div class="splash_view noshow">
       <row>
         <header class="col-md-24">
           <h1 class="center">free<span>Day</span></h1>
@@ -48,15 +50,16 @@
     <!-- end of splash_view -->
 
     <!-- begin create an event view -->
-    <div class="create_event_view noshow">
+    <section class="create_event_view">
       <row>
-        <header class="col-md-24">
+        <div class="header col-md-12">
           <h2>free<span>Day</span></h2>
           <h3>Propose an event</h3>
-        </header>
-      </row>
-      <row>
-        <div class="col-md-24">
+        </div>
+        <!-- </row> -->
+
+        <!-- <row> -->
+        <div class="col-md-12">
           <nav>
             <ul>
               <li>Home</li>
@@ -68,45 +71,43 @@
         </div>
       </row>
 
-      <main>
-        <row>
-          <div class="col-md-12 col-md-offset-6">
-            <form>
-              <label>Event Name:</label>
-              <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
-            </form>
-          </div>
-        </row>
-        <row>
-          <div class="col-md-12">
-            <form>
-              <label>Choose Dates:</label>
-              <input id="event_date" name="date" type="datetime-local">
-            </form>
-          </div>
-        </row>
-        <row>
-          <div class="col-md-8">
-            <h2>Invite People:</h2>
-            <ul>
-              <li>
-                <input type="checkbox">Fred!
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-8">
-            <h3>Somebody Else?</h3>
-            <form class="new_person">
-              <label>Name:</label>
-              <input id="new_person_name" type="text" name="name">
-              <button class="create_button">Submit</button>
-            </form>
-          </div>
-        </row>
+      <!-- ridiculous empty div to push row -->
 
-      </main>
 
-    </div>
+      <row>
+        <div class="col-md-8 col-md-offset">
+          <form>
+            <label>Event Name:</label>
+            <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
+          </form>
+        </div>
+
+        <div class="col-md-12">
+          <form>
+            <label>Choose Dates:</label>
+            <input id="event_date" name="date" type="datetime-local">
+          </form>
+        </div>
+      </row>
+
+      <row>
+        <div class="col-md-8">
+          <h2>Invite People:</h2>
+          <ul id="known_people">
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <h3>Somebody Else?</h3>
+          <form class="new_person">
+            <label>Name:</label>
+            <input id="new_person_name" type="text" name="name">
+            <button class="create_button">Submit</button>
+          </form>
+        </div>
+      </row>
+
+
+    </section>
 
     <!-- end create an event view -->
 
@@ -201,20 +202,23 @@
     
 
 
-
-    <footer class="col-md-24">
-        <nav>
-          <ul>
-            <li>Home</li>
-            <li>About freeDay</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-    </footer>
-
+    <row>
+      <div class="col-md-24">
+        <footer>
+          <nav>
+            <ul>
+              <li>Home</li>
+              <li>About freeDay</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+        </footer>
+      </div>
+    </row>
 
 
   </div>
+
   <!-- end of container -->
 </body>
 </html>
