@@ -14,7 +14,7 @@ CREATE TABLE events(
   id SERIAL PRIMARY KEY, 
   name VARCHAR(150),
   zipcode VARCHAR(5), 
-  deadline DATE 
+  deadline date 
 );
 
 CREATE TABLE activities(
@@ -32,7 +32,7 @@ CREATE TABLE windows(
   id SERIAL PRIMARY KEY, 
   event_id INTEGER, 
   upvotes INTEGER, 
-  day DATE 
+  day date 
 ); 
 
 CREATE TABLE memberships(
