@@ -22,7 +22,7 @@ if option == "1"
 	lat = longlat["lat"]
 	long = longlat["lng"]
 
-	response = HTTParty.get("https://www.eventbriteapi.com/v3/events/search/?location.within=10mi&location.latitude=#{lat}&location.longitude=#{long}&start_date.range_start=#{date}T12%3A30%3A42Z&start_date.range_end=#{endDate}T12%3A30%3A42Z&token=3BS25F7EIU2IIB4YWQWF")
+	response = HTTParty.get("https://www.eventbriteapi.com/v3/events/search/?location.within=10mi&location.latitude=#{lat}&location.longitude=#{long}&start_date.range_start=#{date}T01%3A30%3A42Z&start_date.range_end=#{date}T23%3A30%3A42Z&token=3BS25F7EIU2IIB4YWQWF")
 	counter = 0
 	while counter < 6
 		if response["events"][counter]["venue"]["location"]["address_1"] != nil
@@ -59,7 +59,7 @@ if option == "1"
 end
 
 if option == "2"
-	response = HTTParty.get("http://api.eventful.com/json/events/search/?location=#{zipcode}&start_time=#{date}&end_time=#{endDate}&app_key=PXgMsX9vnshjM5Wv")
+	response = HTTParty.get("http://api.eventful.com/json/events/search/?location=#{zipcode}&start_time=#{date}&end_time=#{date}&app_key=PXgMsX9vnshjM5Wv")
 	response = JSON.parse(response)
 
 	counter = 0 
