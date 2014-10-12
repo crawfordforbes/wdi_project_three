@@ -12,7 +12,8 @@ DROP TABLE people;
 
 CREATE TABLE events(
   id SERIAL PRIMARY KEY, 
-  name VARCHAR(150), 
+  name VARCHAR(150),
+  zipcode integer, 
   deadline DATE 
 );
 
