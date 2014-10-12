@@ -1,5 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Life+Savers:400,700);
+
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Life Savers', sans-serif;
 	background-color: DarkGreen;
 	color: DodgerBlue;
 }
