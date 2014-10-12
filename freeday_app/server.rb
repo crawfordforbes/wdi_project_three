@@ -12,7 +12,7 @@ end
 
 get("/") do
   content_type :html 
-  haml :index 
+  erb :index 
 end
 
 # events 
