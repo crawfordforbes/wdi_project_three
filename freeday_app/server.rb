@@ -2,6 +2,8 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'json'
 require 'haml'
+require_relative './db/connection.rb'
+require_relative './db/models.rb'
 
 # call in models 
 
@@ -11,7 +13,7 @@ end
 
 get("/") do
   content_type :html 
-  erb :index 
+  erb(:index) 
 end
 
 # events 
