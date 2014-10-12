@@ -118,6 +118,44 @@
 
       / ++++ this ends the events view
 
+      / ++++ this begins the individual event view
+
+      .event_view
+        %row
+          %header.col-md-24
+            %h1 FreeDay
+            %h2 Here's all the stuff about this one event
+
+        %nav
+          %row
+            .col-md-24
+              %ul
+                %li Home
+                %li Create an event
+                %li Join an event
+                %li About
+        %main
+          %row
+            .col-md-3
+              %h4 who's invited
+              %p list of invitees (with indication of check-in)
+          
+            .col-md-11
+              %h4 possible activities
+              %p list of activities displaying voting so far
+
+            .col-md-2
+              %h4 check-in to this event
+              %button.check_in Check in
+
+            %nav
+              .col-md-8
+                %p list of clickable links to display individual event
+        
+
+
+      / ++++ this ends the individual event view
+
       / ++++ this footer appears on every view
       %row 
         %footer.col-md-24
