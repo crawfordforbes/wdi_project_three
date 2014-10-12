@@ -8,8 +8,8 @@ Membership.delete_all
 Person.delete_all
 
 ev = Event.create({
-	name: "Ladies Night"
-	zipcode: "90015"
+	name: "Ladies Night",
+	zipcode: "90015",
 	deadline: 2014-10-17
 	})
 
@@ -30,7 +30,7 @@ ac = Activity.create({
 	})
 
 pe = Person.create({
-	name: "Diane Keaton"
+	name: "Diane Keaton",
 	email: "DKeaton@gmail.com"
 	})
 
