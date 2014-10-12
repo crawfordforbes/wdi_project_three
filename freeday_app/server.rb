@@ -70,9 +70,7 @@ post("/activities") do
 
   # create zipcode and dates for api calls
   zipcode = params[:zipcode]
-  startdate = params[:startdate]
-  endDay = startdate.split("-")[2].to_i + 1
-  endDate = date.split("-")[0] + "-" + date.split("-")[1] + "-" + endDay.to_s
+  date = params[:date]
 
   # converts zipcode to lat long for eventbrite api
   longlat = HTTParty.get("http://zipcodedistanceapi.redline13.com/rest/hDnZEdMTiTMIdufkYObXQUY134PG6pnn2KnGYaAh4nZhRfCQ3NNTIMVLQKrW9Okc/info.json/#{zipcode}/degrees")
@@ -81,7 +79,7 @@ post("/activities") do
   long = longlat["lng"]
 
   # get events
-  response = HTTParty.get("https://www.eventbriteapi.com/v3/events/search/?location.within=10mi&location.latitude=#{lat}&location.longitude=#{long}&start_date.range_start=#{date}T12%3A30%3A42Z&start_date.range_end=#{endDate}T12%3A30%3A42Z&token=3BS25F7EIU2IIB4YWQWF")
+  response = HTTParty.get("https://www.eventbriteapi.com/v3/events/search/?location.within=10mi&location.latitude=#{lat}&location.longitude=#{long}&start_date.range_start=#{date}T01%3A30%3A42Z&start_date.range_end=#{date}T23%3A30%3A42Z&token=3BS25F7EIU2IIB4YWQWF")
 
   # get 5 events, if the api is missing info autofill an error message
   eventBritecounter = 0
@@ -122,7 +120,7 @@ post("/activities") do
   end
 
 
-  eventfulResponse = HTTParty.get("http://api.eventful.com/json/events/search/?location=#{zipcode}&start_time=#{date}&end_time=#{endDate}&app_key=PXgMsX9vnshjM5Wv")
+  eventfulResponse = HTTParty.get("http://api.eventful.com/json/events/search/?location=#{zipcode}&start_time=#{date}&end_time=#{date}&app_key=PXgMsX9vnshjM5Wv")
   eventfulResponse = JSON.parse(response)
 
   eventfulCounter = 0 
