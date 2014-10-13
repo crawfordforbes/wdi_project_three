@@ -69,6 +69,7 @@
 
 
     <!-- +++++ this begins the splash page view -->
+    <!-- <div class="page-wrap"> -->
 
     <div class="splash_view noshow">
 
@@ -136,12 +137,17 @@
         <!-- event name and date -->
         <!-- <div class="col-md-8 col-md-offset-4"> -->
           <form>
+            <label>Organizer name:</label>
+            <input id="creator_name" name="name" type="text" placeholder="Your name">
+          </form>
+          <form>
             <label>Event Name:</label>
             <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
           </form>
         <!-- </div> -->
 
         <!-- <div class="col-md-12"> -->
+
           <form>
             <label>Choose Dates:</label>
             <input id="event_date" name="date" type="datetime-local">
@@ -152,15 +158,18 @@
       <!-- <div class="row"> -->
         <!-- invite peopls and add people -->
         <!-- <div class="col-md-12"> -->
-          <h3>Invite People:</h3>
+          <h3>Invite Friends:</h3>
           <ul id="known_people">
           </ul>
         <!-- </div> -->
         <!-- <div class="col-md-12"> -->
-          <h3>Somebody Else?</h3>
+          <h3>Add Invitees</h3>
           <form id="new_person">
             <label>Name:</label>
             <input id="new_person_name" type="text" name="name">
+            <br>
+            <button class="add_invitee_button">Add Friend</button>
+            <br>
             <button class="create_button">Submit</button>
           </form>
         <!-- </div> -->
@@ -173,12 +182,12 @@
 
 
     <!-- +++ begin individual event view -->
-
+    <section class="event_dashboard noshow">
       <div class="row header">
         <!-- page rubric -->
         <div class="col-md-8">
           <h2>free<span>Day</span></h2>
-          <h3>About this event</h3>
+          <h3>Marx Brothers Reunion Dashboard</h3>
         </div>
     
         <!-- top nav -->
@@ -204,20 +213,42 @@
             <h4>Possible Activities</h4>
             <ul></ul>
           </div>
-          <div class="col-md-2">
-            <form id="check_in">
-              <label>Invited? Check In!</label>
-              <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Check In</button>
-            </form>
-          </div>
           <div class="col-md-8">
             <ul id="event_list"></ul>
           </div>
         </div>
       </main>
-
-
     </div>  
+  </div>
+</section>
+
+<section class="join_page noshow">
+  <div class="row header">
+    <div class="col-md-8">
+      <h2>free<span>Day</span></h2>
+      <h3>Invitees: Join Your Event Here</h3>
+    </div>
+  </div>
+
+    <div class="col-md-16 top_nav">
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Create an event</li>
+          <li>Join an event</li>
+          <li>About</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-11">
+      <h2>Organizer name: Groucho Marx</h2>
+      <h3>Event name: Marx Brothers Reunion</h3>
+    </div>
+    
+
+     
+
+
     <!-- +++ end individual event view -->
 
 
@@ -226,7 +257,8 @@
 
     <!-- footer -->
     <footer>
-      <div class="row">
+      <div class="site-footer">
+        <div class="row">
         <div class="col-md-24">
           <nav>
             <ul>
@@ -237,6 +269,7 @@
           </nav>
         </div>
       </div>
+    </div>
     </footer>
 
 
