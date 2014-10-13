@@ -70,6 +70,10 @@ a:hover {
 	margin-bottom: 20px;
 }
 
+.modal-content {
+	color: black;
+}
+
 div.splash_view img {
 	height: 100px;
 	/*display: inline-block;*/
