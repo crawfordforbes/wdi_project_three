@@ -87,18 +87,16 @@
               <h5 class="center">Create an Event</h5>
             </a>
           </div>
-        </div>
-        <div class="row">
           <div class="col-md-4" id="participate_button">
             <a href="#">
               <img src="./images/join_icon.png" onMouseOver="joinMouseRollover(this)" onMouseOut="joinMouseOut(this)" class= "center-block">
               <h5 class="center">Join an Event</h5>
             </a>
-            <select name="which_event" id="which_event_dropdown" class="form-control newFormSelect input-sm">
+<!--             <select name="which_event" id="which_event_dropdown" class="form-control newFormSelect input-sm">
               <option selected="selected">Select which event</option>
               <option value="event one">Mariachi</option>
             </select>
-          </div>
+ -->          </div>
         </div>
       </nav>
 
@@ -109,7 +107,7 @@
 
     <!-- +++ begin create an event view -->
 
-    <section class="create_event_view">
+    <section class="create_event_view ">
 
       <div class="row header">
         <!-- page rubric -->
@@ -138,6 +136,8 @@
           <form>
             <label>Event Name:</label>
             <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
+            <label>Zipcode:</label>
+            <input id="event_zip" name="zipcode" type="text" placeholder="zipcode here">
           </form>
         <!-- </div> -->
 
@@ -173,6 +173,7 @@
 
 
     <!-- +++ begin individual event view -->
+    <section class="indivual_event_view noshow">
 
       <div class="row header">
         <!-- page rubric -->
@@ -218,6 +219,7 @@
 
 
     </div>  
+  </section>
     <!-- +++ end individual event view -->
 
 
