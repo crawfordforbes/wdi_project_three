@@ -1,4 +1,4 @@
-// $(function(){
+$(function(){
 
 // Splash page navigation rollover
    function createMouseRollover(createIcon) {
@@ -17,6 +17,10 @@
       joinIconHover.src = "./images/join_icon.png";
     }
 
-// 
+    $("#dates").multiDatesPicker({
+      onClose: function(d){
+        console.log(d);
 
-// });
+      }
+    });
+ });
