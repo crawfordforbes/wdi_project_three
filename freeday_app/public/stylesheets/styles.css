@@ -41,6 +41,10 @@ h5 {
 	text-align: center;
 }
 
+input {
+	background-color: #2980b9;
+}
+
 a {
 	text-decoration: none;
 	color: white;
@@ -111,3 +115,17 @@ nav ul li {
   margin-top: 40px;
 }*/
 
+#ui-datepicker-div {
+		background-color: #2980b9;
+
+}
+
+.ui-datepicker .ui-datepicker-calendar .ui-state-highlight a {
+	background-color: red;
+	color: blue;
+	
+}
+
+button {
+	background-color: black;
+}
