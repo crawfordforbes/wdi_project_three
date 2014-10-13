@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>freeDay</title>
   <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
   <!-- bootstrap CSS -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
@@ -12,54 +14,24 @@
   <link rel="stylesheet" href="/stylesheets/styles.css">
   <script src="/bootstrap/js/bootstrap.js"></script>
   <script type="text/javascript" src="./javascripts/scripts.js"></script>
-  <title>freeDay</title>
 </head>
 
 <body>
 
   <div class="container">
 
-    <!-- +++++ this begins the splash page view -->
-    <div class="splash_view noshow">
-      <row>
-        <header class="col-md-24">
-          <h1 class="center">free<span>Day</span></h1>
-          <h3 class="center">What day are you free?</h3>
-        </header>
-      </row>
-      <nav>
-        <row>
-          <div class="col-md-4 col-md-offset-8">
-            <a href="#">
-              <img src="./images/create_icon.png" onMouseOver="createMouseRollover(this)" onMouseOut="createMouseOut(this)" class= "center-block">
-              <h5 class="center">Create an Event</h5>
-            </a>
-          </div>
-        </row>
-        <row>
-          <div class="col-md-4">
-            <a href="#">
-              <img src="./images/join_icon.png" onMouseOver="joinMouseRollover(this)" onMouseOut="joinMouseOut(this)" class= "center-block">
-              <h5 class="center">Join an Event</h5>
-            </a>
-          </div>
-        </row>
-      </nav>
+    <!-- the splash page is in the nearby index_test.erb right now -->
 
-    </div>
-    <!-- end of splash_view -->
 
     <!-- begin create an event view -->
     <section class="create_event_view">
-      <row>
-        <div class="header col-md-12">
+      <div class="row">
+        <div class="col-md-8">
           <h2>free<span>Day</span></h2>
           <h3>Propose an event</h3>
         </div>
-        <!-- </row> -->
 
-        <!-- <row> -->
-        <div class="col-md-12">
+        <div class="col-md-16">
           <nav>
             <ul>
               <li>Home</li>
@@ -69,13 +41,12 @@
             </ul>
           </nav>
         </div>
-      </row>
-
-      <!-- ridiculous empty div to push row -->
+      </div>
 
 
-      <row>
-        <div class="col-md-8 col-md-offset">
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-4">
           <form>
             <label>Event Name:</label>
             <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
@@ -88,9 +59,9 @@
             <input id="event_date" name="date" type="datetime-local">
           </form>
         </div>
-      </row>
+      </div>
 
-      <row>
+      <div class="row">
         <div class="col-md-8">
           <h2>Invite People:</h2>
           <ul id="known_people">
@@ -104,7 +75,7 @@
             <button class="create_button">Submit</button>
           </form>
         </div>
-      </row>
+      </div>
 
 
     </section>
@@ -114,13 +85,13 @@
     <!-- begin events view -->
 
     <div class="events_view noshow">
-      <row>
+      <div class="row">
         <header class="col-md-24">
           <h2>free<span>Day</span></h2>
           <h3>Choose an event</h3>
         </header>
-      </row>
-      <row>
+      </div>
+      <div class="row">
         <div class="col-md-24">
           <nav>
             <ul>
@@ -131,9 +102,9 @@
             </ul>
           </nav>
         </div>
-      </row>
+      </div>
       <main>
-        <row>
+        <div class="row">
           <div class="col-md-16">
             <p>big picture of talking bear</p>
           </div>
@@ -144,7 +115,7 @@
             </nav>
           </div>
 
-        </row>
+        </div>
 
 
       </main>
@@ -156,13 +127,13 @@
     <!-- begin individual event view -->
 
     <div class="event_view noshow">
-      <row>
+      <div class="row">
         <header class="col-md-24">
           <h2>free<span>Day</span></h2>
           <h3>About this event</h3>
         </header>
-      </row>
-      <row>
+      </div>
+      <div class="row">
         <div class="col-md-24">
           <nav>
             <ul>
@@ -173,10 +144,10 @@
             </ul>
           </nav>
         </div>
-      </row>
+      </div>
 
       <main>
-        <row> 
+        <div class="row"> 
           <div class="col-md-3">
             <h4>Who's Invited</h4>
             <p>list of invitees with indic of check-in</p>
@@ -192,7 +163,7 @@
           <div class="col-md-8">
             <p>list of clickable events</p>
           </div>
-        </row>
+        </div>
       </main>
 
 
@@ -202,9 +173,9 @@
     
 
 
-    <row>
-      <div class="col-md-24">
-        <footer>
+    <footer>
+      <div class="row">
+        <div class="col-md-24">
           <nav>
             <ul>
               <li>Home</li>
@@ -212,9 +183,9 @@
               <li>Contact</li>
             </ul>
           </nav>
-        </footer>
+        </div>
       </div>
-    </row>
+    </footer>
 
 
   </div>
