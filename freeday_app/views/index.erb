@@ -32,7 +32,7 @@
     <!-- +++++ this begins the splash page view -->
     <!-- <div class="page-wrap"> -->
 
-    <div class="splash_view noshow">
+    <div class="splash_view">
 
       <div class="row">
         <div class="col-md-24">
@@ -69,7 +69,7 @@
 
     <!-- +++ begin create an event view -->
 
-    <section class="create_event_view ">
+    <section class="create_event noshow">
 
       <div class="row header">
         <!-- page rubric -->
@@ -114,9 +114,6 @@
           <label for="from">Pick Dates:</label>
           <input type="text" id="dates" name="from">
 
-
-
-
       <!-- <div class="row"> -->
         <!-- invite peopls and add people -->
         <!-- <div class="col-md-12"> -->
@@ -145,9 +142,7 @@
 
     <!-- +++ begin individual event view -->
 
-    <section class="create_event_view noshow">
-
-    
+       <section class="event_dashboard noshow">
       <div class="row header">
         <!-- page rubric -->
         <div class="col-md-8">
@@ -188,7 +183,7 @@
 
 <!-- +++ end individual event view -->
 
-<section class="join_page">
+<section class="join_page noshow">
   <div class="row header">
     <div class="col-md-8">
       <h2>free<span>Day</span></h2>
@@ -206,6 +201,7 @@
         </ul>
       </nav>
     </div>
+    <section class="join_or_decline_page noshow">
     <div class="col-md-11">
       <h2>Organizer name: Groucho Marx</h2>
       <h3>Event name: Marx Brothers Reunion</h3>
@@ -214,10 +210,16 @@
     <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Yes, I'm going!</button>
     <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">I'm sorry I cannot attend!</button>
   </div>
-
-
-
-    <!-- +++ end individual event view -->
+</section>
+ <!-- +++ end join or decline invitation view -->
+  <section class="decline_join_page show">
+    <div class="col-md-11">
+      <h2>Oh well, we'll miss you!</h2>
+      <a href="/create">Create An Event</a>
+      <a href="/splash">Home</a>
+    </div>
+    </section>
+    <!-- +++ end decline to join event page -->
 
     <!-- footer -->
     <footer>
