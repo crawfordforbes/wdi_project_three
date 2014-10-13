@@ -17,21 +17,10 @@ $(function(){
       joinIconHover.src = "./images/join_icon.png";
     }
 
-    $("#from").multiDatesPicker({
-      defaultDate: "+1w", 
-      changeMonth: true, 
-      numberOfMonths: 3,
-      onClose: function(selectedDate) {
-        $("#to").datepicker("option", "minDate", selectedDate);
-      }
-    });
-    
-    $("#to").multiDatesPicker({
-      defaultDate: "+1w", 
-      changeMonth: true,
-      numberOfMonths: 3,
-      onClose: function(selecteDate) {
-        $("#from").datepicker("option", "maxDate", selectedDate);
+    $("#dates").multiDatesPicker({
+      onClose: function(d){
+        console.log(d);
+
       }
     });
  });
