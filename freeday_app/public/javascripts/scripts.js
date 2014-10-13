@@ -17,7 +17,7 @@ $(function(){
       joinIconHover.src = "./images/join_icon.png";
     }
 
-    $("#from").datepicker({
+    $("#from").multiDatesPicker({
       defaultDate: "+1w", 
       changeMonth: true, 
       numberOfMonths: 3,
@@ -25,7 +25,8 @@ $(function(){
         $("#to").datepicker("option", "minDate", selectedDate);
       }
     });
-    $("#to").datepicker({
+    
+    $("#to").multiDatesPicker({
       defaultDate: "+1w", 
       changeMonth: true,
       numberOfMonths: 3,
