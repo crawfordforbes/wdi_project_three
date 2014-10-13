@@ -5,6 +5,7 @@ require 'haml'
 require_relative './db/connection.rb'
 require_relative './db/models.rb'
 
+
 # call in models 
 
 before do
@@ -252,6 +253,10 @@ post("/memberships") do
     people_id: membership_json["people_id"],
     event_id: membership_json["event_id"]
     ).to_json 
+end 
+
+delete("/memberships/:id") do 
+  Membership.find_by_id(params[:id]).destroy 
 end 
 
 # people #

@@ -5,9 +5,10 @@
 	margin: 0;
 }
 
-body {
+html, body {
 	font-family: 'Fresca', sans-serif;
 	background-color: #2980b9;
+	height: 100%;
 	color: White;
 }
 
@@ -70,9 +71,30 @@ a:hover {
 	margin-bottom: 20px;
 }
 
+
 .modal-content {
 	color: black;
 }
+
+
+/*.page-wrap {
+	min-height: 100%;
+	margin-bottom: -142%;
+}
+
+.page-wrap:after {
+	content: "";
+	display: block;
+}
+
+.site-footer, .page-wrap:after {
+	height: 142px;
+}
+
+.site-footer, .push {
+	background: black;
+}*/
+
 
 div.splash_view img {
 	height: 100px;
@@ -91,8 +113,8 @@ nav ul li {
 	margin-right: 16px;
 }
 
-footer {
+/*footer {
   height: 60px;
   margin-top: 40px;
-}
+}*/
 
