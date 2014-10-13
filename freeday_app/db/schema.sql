@@ -14,7 +14,7 @@ CREATE TABLE events(
   id SERIAL PRIMARY KEY, 
   name VARCHAR(150),
   zipcode VARCHAR(5), 
-  deadline DATE 
+  deadline date 
 );
 
 CREATE TABLE activities(
@@ -25,14 +25,15 @@ CREATE TABLE activities(
   address VARCHAR(500), -- combo of city and address
   url VARCHAR(500),
   description TEXT,
-  window_id INTEGER -- activity date
+  window_id INTEGER, -- activity date
+  selected boolean
 );
 
 CREATE TABLE windows(
   id SERIAL PRIMARY KEY, 
   event_id INTEGER, 
   upvotes INTEGER, 
-  day DATE 
+  day date 
 ); 
 
 CREATE TABLE memberships(
