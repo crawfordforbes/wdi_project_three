@@ -5,7 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>freeDay</title>
+  <!-- first include jQuery --> 
   <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+  <!-- then include jQuery UI w/ the DatesPicker module included (knocking, wood) -->
+  <script src='/javascripts/jquery-ui.min.js'></script>
+  <!-- then include jQuery UI MultiDatesPicker --> 
+  <script src='/javascripts/jquery-ui.multidatespicker.js'></script>
+
+
   <!-- bootstrap CSS -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
   <!-- Optional theme -->
@@ -18,18 +25,21 @@
 
 <body>
 
+  <!-- <input id="datePick" type="text"/> -->
+
+
   <div class="container">
 
     <!-- +++ begin check-in modals -->
 
     <!-- Large modal -->
 
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<!--     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content" id="check_in_modal_1">
-            
+ -->            
             <!-- dropdown to say who I am -->
-            <select name="which_invitee" id="which_invitee_dropdown" class="form-control newFormSelect input-sm">
+<!--             <select name="which_invitee" id="which_invitee_dropdown" class="form-control newFormSelect input-sm">
               <option selected="selected">Who Am I?</option>
               <option value="invitee one">Invitee One</option>
             </select>
@@ -41,9 +51,9 @@
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content" id="check_in_modal_2">
-            
+ -->            
             <!-- choice of free days -->
-            <h4>choice of free days</h4>
+<!--             <h4>choice of free days</h4>
             <button id="can_make_it">I Can Make It These Days</button>
             <button id="cant_make_it">I Can't Make It</button>
 
@@ -54,15 +64,15 @@
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content" id="check_in_modal_3">
-            
+ -->            
             <!-- list of activities with voting -->
-            <h4>Which Activities Would You Prefer?</h4>
+<!--             <h4>Which Activities Would You Prefer?</h4>
             <ul id="activities_modal_list"></ul>
 
         </div>
       </div>
     </div>
-
+ -->
 
     <!-- +++ end check-in modals -->
 
