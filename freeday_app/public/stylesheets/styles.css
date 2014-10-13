@@ -71,6 +71,12 @@ a:hover {
 	margin-bottom: 20px;
 }
 
+
+.modal-content {
+	color: black;
+}
+
+
 /*.page-wrap {
 	min-height: 100%;
 	margin-bottom: -142%;
@@ -88,6 +94,7 @@ a:hover {
 .site-footer, .push {
 	background: black;
 }*/
+
 
 div.splash_view img {
 	height: 100px;

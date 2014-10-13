@@ -255,6 +255,10 @@ post("/memberships") do
     ).to_json 
 end 
 
+delete("/memberships/:id") do 
+  Membership.find_by_id(params[:id]).destroy 
+end 
+
 # people #
 
 get("/people") do 
