@@ -49,16 +49,17 @@
               <h5 class="center">Create an Event</h5>
             </a>
           </div>
+          
           <div class="col-md-4" id="participate_button">
-            <a href="#">
+            <a href="#" id="join_link">
               <img src="./images/join_icon.png" onMouseOver="joinMouseRollover(this)" onMouseOut="joinMouseOut(this)" class= "center-block">
               <h5 class="center">Join an Event</h5>
             </a>
 <!--             <select name="which_event" id="which_event_dropdown" class="form-control newFormSelect input-sm">
               <option selected="selected">Select which event</option>
               <option value="event one">Mariachi</option>
-            </select>
- -->          </div>
+            </select> -->          
+          </div>
         </div>
       </nav>
 
@@ -69,7 +70,7 @@
 
     <!-- +++ begin create an event view -->
 
-    <section class="create_event_view ">
+    <div class="create_event_view noshow">
 
       <div class="row header">
         <!-- page rubric -->
@@ -136,7 +137,7 @@
         <!-- </div> -->
       <!-- </div> -->
 
-    </section>
+    </div>
 
     <!-- +++ end create an event view -->
 
@@ -144,7 +145,7 @@
 
     <!-- +++ begin individual event view -->
 
-    <section class="create_event_view noshow">
+    <div class="dashboard_view noshow">
 
     
       <div class="row header">
@@ -183,11 +184,12 @@
         </div>
       </main>
     </div>  
-</section>
 
 <!-- +++ end individual event view -->
 
-<section class="join_page noshow">
+<!-- +++ join view begins -->
+
+<div class="join_view noshow" id="join_link">
   <div class="row header">
     <div class="col-md-8">
       <h2>free<span>Day</span></h2>
@@ -209,8 +211,9 @@
       <h2>Organizer name: Groucho Marx</h2>
       <h3>Event name: Marx Brothers Reunion</h3>
     </div>
+</div>
 
-    <!-- +++ end individual event view -->
+    <!-- +++ end join view -->
 
     <!-- footer -->
     <footer>

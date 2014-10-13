@@ -45,6 +45,22 @@ $('#create_link').on('click', function(e){
 // debugger;
   e.preventDefault();
   console.log("this button clicked");
+
+  // make the splash_view div hidden and the create_view div visible
+  $('div.create_event_view').removeClass('noshow');
+  $('div.splash_view').addClass('noshow');
+
+})
+
+$('#join_link').on('click', function(e){
+// debugger;
+  e.preventDefault();
+  console.log("this button clicked");
+
+  // make the splash_view div hidden and the dashboard_view div visible
+  $('div.dashboard_view').removeClass('noshow');
+  $('div.splash_view').addClass('noshow');
+
 })
 
 
