@@ -25,65 +25,14 @@
 
 <body>
 
-  <!-- <input id="datePick" type="text"/> -->
-  <label for="from">Pick Dates:</label>
-  <input type="text" id="dates" name="from">
-
 
   <div class="container">
-
-    <!-- +++ begin check-in modals -->
-
-    <!-- Large modal -->
-
-<!--     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content" id="check_in_modal_1">
- -->            
-            <!-- dropdown to say who I am -->
-<!--             <select name="which_invitee" id="which_invitee_dropdown" class="form-control newFormSelect input-sm">
-              <option selected="selected">Who Am I?</option>
-              <option value="invitee one">Invitee One</option>
-            </select>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content" id="check_in_modal_2">
- -->            
-            <!-- choice of free days -->
-<!--             <h4>choice of free days</h4>
-            <button id="can_make_it">I Can Make It These Days</button>
-            <button id="cant_make_it">I Can't Make It</button>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content" id="check_in_modal_3">
- -->            
-            <!-- list of activities with voting -->
-<!--             <h4>Which Activities Would You Prefer?</h4>
-            <ul id="activities_modal_list"></ul>
-
-        </div>
-      </div>
-    </div>
- -->
-
-    <!-- +++ end check-in modals -->
-
 
 
     <!-- +++++ this begins the splash page view -->
     <!-- <div class="page-wrap"> -->
 
-    <div class="splash_view">
+    <div class="splash_view noshow">
 
       <div class="row">
         <div class="col-md-24">
@@ -161,12 +110,12 @@
 
         <!-- <div class="col-md-12"> -->
 
-          <form>
-            <label>Choose Dates:</label>
-            <input id="event_date" name="date" type="datetime-local">
-          </form>
-        <!-- </div> -->
-      <!-- </div> -->
+          <!-- datePicker -->
+          <label for="from">Pick Dates:</label>
+          <input type="text" id="dates" name="from">
+
+
+
 
       <!-- <div class="row"> -->
         <!-- invite peopls and add people -->
@@ -196,6 +145,9 @@
 
     <!-- +++ begin individual event view -->
 
+    <section class="create_event_view noshow">
+
+    
       <div class="row header">
         <!-- page rubric -->
         <div class="col-md-8">
