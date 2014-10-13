@@ -62,6 +62,14 @@ a:hover {
 	text-align: center;
 }
 
+.top_nav {
+	margin-top: 50px;
+}
+
+.header {
+	margin-bottom: 20px;
+}
+
 div.splash_view img {
 	height: 100px;
 	/*display: inline-block;*/
