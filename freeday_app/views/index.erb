@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>freeDay</title>
   <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
   <!-- bootstrap CSS -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
@@ -12,51 +14,112 @@
   <link rel="stylesheet" href="/stylesheets/styles.css">
   <script src="/bootstrap/js/bootstrap.js"></script>
   <script type="text/javascript" src="./javascripts/scripts.js"></script>
-  <title>freeDay</title>
 </head>
 
 <body>
+
   <div class="container">
+
+    <!-- +++ begin check-in modals -->
+
+    <!-- Large modal -->
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="check_in_modal_1">
+            
+            <!-- dropdown to say who I am -->
+            <select name="which_invitee" id="which_invitee_dropdown" class="form-control newFormSelect input-sm">
+              <option selected="selected">Who Am I?</option>
+              <option value="invitee one">Invitee One</option>
+            </select>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="check_in_modal_2">
+            
+            <!-- choice of free days -->
+            <h4>choice of free days</h4>
+            <button id="can_make_it">I Can Make It These Days</button>
+            <button id="cant_make_it">I Can't Make It</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="check_in_modal_3">
+            
+            <!-- list of activities with voting -->
+            <h4>Which Activities Would You Prefer?</h4>
+            <ul id="activities_modal_list"></ul>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- +++ end check-in modals -->
+
+
+
     <!-- +++++ this begins the splash page view -->
-    <div class="splash_view">
-      <row>
-        <header class="col-md-24">
+
+    <div class="splash_view noshow">
+
+      <div class="row">
+        <div class="col-md-24">
           <h1 class="center">free<span>Day</span></h1>
           <h3 class="center">What day are you free?</h3>
-        </header>
-      </row>
+        </div>
+      </div>
+
       <nav>
-        <row>
-          <div class="col-md-4 col-md-offset-8">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-8" id="create_button">
             <a href="#">
               <img src="./images/create_icon.png" onMouseOver="createMouseRollover(this)" onMouseOut="createMouseOut(this)" class= "center-block">
               <h5 class="center">Create an Event</h5>
             </a>
           </div>
-        </row>
-        <row>
-          <div class="col-md-4">
+        </div>
+        <div class="row">
+          <div class="col-md-4" id="participate_button">
             <a href="#">
               <img src="./images/join_icon.png" onMouseOver="joinMouseRollover(this)" onMouseOut="joinMouseOut(this)" class= "center-block">
               <h5 class="center">Join an Event</h5>
             </a>
+            <select name="which_event" id="which_event_dropdown" class="form-control newFormSelect input-sm">
+              <option selected="selected">Select which event</option>
+              <option value="event one">Mariachi</option>
+            </select>
           </div>
-        </row>
+        </div>
       </nav>
 
     </div>
-    <!-- end of splash_view -->
 
-    <!-- begin create an event view -->
-    <div class="create_event_view noshow">
-      <row>
-        <header class="col-md-24">
+    <!-- +++++ end of splash_view -->
+
+
+    <!-- +++ begin create an event view -->
+
+    <section class="create_event_view">
+
+      <div class="row header">
+        <!-- page rubric -->
+        <div class="col-md-8">
           <h2>free<span>Day</span></h2>
           <h3>Propose an event</h3>
-        </header>
-      </row>
-      <row>
-        <div class="col-md-24">
+        </div>
+    
+        <!-- top nav -->
+        <div class="col-md-16 top_nav">
           <nav>
             <ul>
               <li>Home</li>
@@ -66,103 +129,60 @@
             </ul>
           </nav>
         </div>
-      </row>
+      </div>
 
-      <main>
-        <row>
-          <div class="col-md-12 col-md-offset-6">
-            <form>
-              <label>Event Name:</label>
-              <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
-            </form>
-          </div>
-        </row>
-        <row>
-          <div class="col-md-12">
-            <form>
-              <label>Choose Dates:</label>
-              <input id="event_date" name="date" type="datetime-local">
-            </form>
-          </div>
-        </row>
-        <row>
-          <div class="col-md-8">
-            <h2>Invite People:</h2>
-            <ul>
-              <li>
-                <input type="checkbox">Fred!
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-8">
-            <h3>Somebody Else?</h3>
-            <form class="new_person">
-              <label>Name:</label>
-              <input id="new_person_name" type="text" name="name">
-              <button class="create_button">Submit</button>
-            </form>
-          </div>
-        </row>
+      
+      <!-- <div class="row"> -->
+        <!-- event name and date -->
+        <!-- <div class="col-md-8 col-md-offset-4"> -->
+          <form>
+            <label>Event Name:</label>
+            <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
+          </form>
+        <!-- </div> -->
 
-      </main>
+        <!-- <div class="col-md-12"> -->
+          <form>
+            <label>Choose Dates:</label>
+            <input id="event_date" name="date" type="datetime-local">
+          </form>
+        <!-- </div> -->
+      <!-- </div> -->
 
-    </div>
+      <!-- <div class="row"> -->
+        <!-- invite peopls and add people -->
+        <!-- <div class="col-md-12"> -->
+          <h3>Invite People:</h3>
+          <ul id="known_people">
+          </ul>
+        <!-- </div> -->
+        <!-- <div class="col-md-12"> -->
+          <h3>Somebody Else?</h3>
+          <form id="new_person">
+            <label>Name:</label>
+            <input id="new_person_name" type="text" name="name">
+            <button class="create_button">Submit</button>
+          </form>
+        <!-- </div> -->
+      <!-- </div> -->
 
-    <!-- end create an event view -->
+    </section>
 
-    <!-- begin events view -->
-
-    <div class="events_view noshow">
-      <row>
-        <header class="col-md-24">
-          <h2>free<span>Day</span></h2>
-          <h3>Choose an event</h3>
-        </header>
-      </row>
-      <row>
-        <div class="col-md-24">
-          <nav>
-            <ul>
-              <li>Home</li>
-              <li>Create an event</li>
-              <li>Join an event</li>
-              <li>About</li>
-            </ul>
-          </nav>
-        </div>
-      </row>
-      <main>
-        <row>
-          <div class="col-md-16">
-            <p>big picture of talking bear</p>
-          </div>
-
-          <div class="col-md-8">
-            <nav>
-              <p>list of clickable links to display individual events</p>
-            </nav>
-          </div>
-
-        </row>
+    <!-- +++ end create an event view -->
 
 
-      </main>
 
-    </div>
+    <!-- +++ begin individual event view -->
 
-    <!-- end events view -->
-
-    <!-- begin individual event view -->
-
-    <div class="event_view noshow">
-      <row>
-        <header class="col-md-24">
+      <div class="row header">
+        <!-- page rubric -->
+        <div class="col-md-8">
           <h2>free<span>Day</span></h2>
           <h3>About this event</h3>
-        </header>
-      </row>
-      <row>
-        <div class="col-md-24">
+        </div>
+    
+        <!-- top nav -->
+        <div class="col-md-16 top_nav">
           <nav>
             <ul>
               <li>Home</li>
@@ -172,50 +192,56 @@
             </ul>
           </nav>
         </div>
-      </row>
+      </div>
 
       <main>
-        <row> 
-          <div class="col-md-3">
+        <div class="row"> 
+          <div class="col-md-3" id="invitee_list">
             <h4>Who's Invited</h4>
-            <p>list of invitees with indic of check-in</p>
+            <ul></ul>
           </div>
-          <div class="col-md-11">
-            <h4>Who's Invited</h4>
-            <p>list of invitees with indic of check-in</p>
+          <div class="col-md-11" id="activity_list">
+            <h4>Possible Activities</h4>
+            <ul></ul>
           </div>
           <div class="col-md-2">
-            <h4>Who's Invited</h4>
-            <p>list of invitees with indic of check-in</p>
+            <form id="check_in">
+              <label>Invited? Check In!</label>
+              <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Check In</button>
+            </form>
           </div>
           <div class="col-md-8">
-            <p>list of clickable events</p>
+            <ul id="event_list"></ul>
           </div>
-        </row>
+        </div>
       </main>
 
 
     </div>  
-    <!-- end individual event view -->
+    <!-- +++ end individual event view -->
+
+
 
     
 
-
-
-    <footer class="col-md-24">
-        <nav>
-          <ul>
-            <li>Home</li>
-            <li>About freeDay</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
+    <!-- footer -->
+    <footer>
+      <div class="row">
+        <div class="col-md-24">
+          <nav>
+            <ul>
+              <li>Home</li>
+              <li>About freeDay</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </footer>
-
 
 
   </div>
   <!-- end of container -->
 </body>
-</html>
 
+</html>
