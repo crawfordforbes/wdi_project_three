@@ -1,5 +1,3 @@
-$(function(){
-
 // Splash page navigation rollover
    function createMouseRollover(createIcon) {
       createIcon.src = "./images/create_icon_gray.png";
@@ -16,6 +14,11 @@ $(function(){
     function joinMouseOut(joinIconHover) {
       joinIconHover.src = "./images/join_icon.png";
     }
+
+
+$(function(){
+
+// all this is for the calendar
 
     $("#dates").multiDatesPicker({
       onClose: function(datesString){
@@ -36,7 +39,20 @@ $(function(){
 
       }
     });
+
+
+$('#create_link').on('click', function(e){
+// debugger;
+  e.preventDefault();
+  console.log("this button clicked");
+})
+
+
  });
+// end of onLoad
+
+
+
 
 function sendWindowDates(datesStr, eventId) {
   var eventId = 1;
