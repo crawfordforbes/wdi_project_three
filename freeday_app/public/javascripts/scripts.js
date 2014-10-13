@@ -20,31 +20,19 @@ $(function(){
 
 // all this is for the calendar
 
-    $("#dates").multiDatesPicker({
-      onClose: function(datesString){
-        sendWindowDates(datesString);
-        /* TO WHOMSOEVER WRITES THE AJAX CALLS: 
-        I think what we actually
-        want to do here is, onClose, 
-        set the value of this input#dates element
-        to the value of dateString.
-        When the submit button is pressed, 
-        we will require a function that implements the following:  
-        1) break the dateString into X different 
-        dateStrings (dateStrings are seperated by the substring ", "), 
-        2) send off X different AJAX requests 
-        3) to create X window objs on the server, which are then saved 
-        to the db, associated w/ the Event in Question. */ 
-        
-
-      }
-    });
 
 
 $('#create_link').on('click', function(e){
 // debugger;
   e.preventDefault();
   console.log("this button clicked");
+
+  
+  $("#dates").multiDatesPicker({
+    onClose: function(datesString) {
+      sendWindowDates(datesString);
+    }
+  }); 
 
   // make the splash_view div hidden and the create_view div visible
   $('div.create_event_view').removeClass('noshow');
@@ -62,6 +50,7 @@ $('#join_link').on('click', function(e){
   $('div.splash_view').addClass('noshow');
 
 })
+
 
 
  });
@@ -176,6 +165,8 @@ function dropdownDates() {
     }
   })
 }
+
+
 
 
 $(window).load(dropdownDates)
