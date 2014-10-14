@@ -22,25 +22,21 @@ $(function(){
 
 
 
-$('#create_link').on('click', function(e){
+$('#create_link, #nav_create').on('click', function(e) {
 // debugger;
   e.preventDefault();
   console.log("this button clicked");
 
-  
-  $("#dates").multiDatesPicker({
-    onClose: function(datesString) {
-      sendWindowDates(datesString);
-    }
-  }); 
+  $("#dates").multiDatesPicker();
 
   // make the splash_view div hidden and the create_view div visible
   $('div.create_event_view').removeClass('noshow');
   $('div.splash_view').addClass('noshow');
+  $('div.dashboard_view').addClass('noshow');
 
-})
+});
 
-$('#join_link').on('click', function(e){
+$('#join_link, #nav_join').on('click', function(e){
 // debugger;
   e.preventDefault();
   console.log("this button clicked");
@@ -48,6 +44,7 @@ $('#join_link').on('click', function(e){
   // make the splash_view div hidden and the dashboard_view div visible
   $('div.dashboard_view').removeClass('noshow');
   $('div.splash_view').addClass('noshow');
+  $('div.create_event_view').addClass('noshow');
 
 })
 
@@ -208,3 +205,22 @@ function createActivityList() {
 }
 
 $(window).load(createActivityList)
+
+
+function getActivities() {
+  var div = $("#activityButton")
+  var button = document.createElement("button")
+  button.innerText = ("PUSH ME")
+  div.append(button)
+  button.addEventListener("click", function(){
+    $.ajax({
+      type: "POST",
+      url: "http://127.0.0.1:4567/activities",
+      success: function(data) {
+      console.log("BUTTON PUSHED")
+      }
+    })
+  })
+}
+
+$(window).load(getActivities)
