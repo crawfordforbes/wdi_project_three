@@ -18,6 +18,7 @@
 
 $(function(){
 
+
 // all this is for the calendar
 
 
@@ -166,9 +167,6 @@ function dropdownDates() {
 
 
 
-$(window).load(dropdownDates)
-$(window).load(dropdownPeople)
-$(window).load(dropdownEvents)
 
 function createActivityList() {
   $.ajax({
@@ -192,7 +190,7 @@ function createActivityList() {
         var urlLi = document.createElement("li")
         var url = document.createElement("a")
         url.setAttribute("href", data[i]["url"])
-        url.innerText = data[i]["url"]
+        url.innerText = ("Click here for tickets!")
         var ul = document.getElementById("masterActivityList")
         ul.appendChild(name)
         ul.appendChild(address)
@@ -224,3 +222,7 @@ function getActivities() {
 }
 
 $(window).load(getActivities)
+  
+$(window).load(dropdownDates)
+$(window).load(dropdownPeople)
+$(window).load(dropdownEvents)
