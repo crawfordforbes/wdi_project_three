@@ -99,7 +99,7 @@ function dropdownEvents() {
   })
 }
 
-// add id "eventDropDown" to element to make this list appear
+// add id "peopleDropDown" to element to make this list appear
 
 function dropdownPeople() {
   $.ajax({
