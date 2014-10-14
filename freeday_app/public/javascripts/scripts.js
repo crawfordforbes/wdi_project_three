@@ -27,7 +27,6 @@ $('#create_link').on('click', function(e) {
   e.preventDefault();
   console.log("this button clicked");
 
-  
   $("#dates").multiDatesPicker();
 
   // make the splash_view div hidden and the create_view div visible
