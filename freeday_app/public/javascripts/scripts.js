@@ -172,3 +172,39 @@ function dropdownDates() {
 $(window).load(dropdownDates)
 $(window).load(dropdownPeople)
 $(window).load(dropdownEvents)
+
+function createActivityList() {
+  $.ajax({
+    type: "GET",
+    url: "http://127.0.0.1:4567/activities",
+    datatype: JSON,
+    success: function(data) {
+      console.log(data)
+      var div = $("#activityList")
+      var ul = document.createElement("ul")
+      var li = document.createElement("li")
+      ul.setAttribute("id", "masterActivityList")
+      div.append(ul)
+      for(i=0; i<data.length; i++){
+        var name = document.createElement("li")
+        name.innerText = data[i]["name"]
+        var address = document.createElement("li")
+        address.innerText = data[i]["address"]
+        var description = document.createElement("li")
+        description.innerText = data[i]["description"]
+        var urlLi = document.createElement("li")
+        var url = document.createElement("a")
+        url.setAttribute("href", data[i]["url"])
+        url.innerText = data[i]["url"]
+        var ul = document.getElementById("masterActivityList")
+        ul.appendChild(name)
+        ul.appendChild(address)
+        ul.appendChild(urlLi)
+        urlLi.appendChild(url)
+
+      }
+    }
+  })
+}
+
+$(window).load(createActivityList)
