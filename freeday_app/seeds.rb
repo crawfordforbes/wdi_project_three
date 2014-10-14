@@ -1,11 +1,11 @@
 require_relative './db/connection.rb'
 # require_relative '/db/models.rb'
 
-Event.delete_all
-Activity.delete_all
-Window.delete_all
-Membership.delete_all
-Person.delete_all
+# Event.delete_all
+# Activity.delete_all
+# Window.delete_all
+# Membership.delete_all
+# Person.delete_all
 
 ev = Event.create({
 	name: "Ladies Night",
