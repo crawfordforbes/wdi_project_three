@@ -22,23 +22,19 @@ $(function(){
 
 
 
-$('#create_link').on('click', function(e){
+$('#create_link').on('click', function(e) {
 // debugger;
   e.preventDefault();
   console.log("this button clicked");
 
   
-  $("#dates").multiDatesPicker({
-    onClose: function(datesString) {
-      sendWindowDates(datesString);
-    }
-  }); 
+  $("#dates").multiDatesPicker();
 
   // make the splash_view div hidden and the create_view div visible
   $('div.create_event_view').removeClass('noshow');
   $('div.splash_view').addClass('noshow');
 
-})
+});
 
 $('#join_link').on('click', function(e){
 // debugger;
@@ -55,7 +51,6 @@ $('#join_link').on('click', function(e){
 
  });
 // end of onLoad
-
 
 
 
