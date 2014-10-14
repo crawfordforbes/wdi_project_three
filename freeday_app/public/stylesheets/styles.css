@@ -52,6 +52,13 @@ a {
 	color: white;
 }
 
+button {
+padding: 5px;
+color: white;
+background-color: #999;
+border-radius: 5px;
+}
+
 a:hover {
 	text-decoration: none;
 	color: #ccc;
@@ -138,11 +145,6 @@ nav ul li {
 	background-color: #2980b9;
 	color: #ccc;
 	
-}
-
-
-button {
-	background-color: #0D5B8F;
 }
 
 body > div#ui-datepicker-div {
