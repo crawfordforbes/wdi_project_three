@@ -21,6 +21,13 @@ $(function(){
 
 // all this is for the calendar
 
+$('#nav_home').on('click', function(e) {
+  e.preventDefault();
+  console.log("this button clicked");
+  $('div.splash_view').removeClass('noshow');
+  $('div.create_event_view').addClass('noshow');
+  $('div.dashboard_view').addClass('noshow');
+});
 
 
 $('#create_link, #nav_create').on('click', function(e) {
@@ -46,7 +53,6 @@ $('#join_link, #nav_join').on('click', function(e){
   $('div.dashboard_view').removeClass('noshow');
   $('div.splash_view').addClass('noshow');
   $('div.create_event_view').addClass('noshow');
-
 })
 
 
