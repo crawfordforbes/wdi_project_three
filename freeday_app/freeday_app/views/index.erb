@@ -25,15 +25,65 @@
 
 <body>
 
+  <!-- <input id="datePick" type="text"/> -->
+  <label for="from">Pick Dates:</label>
+  <input type="text" id="dates" name="from">
+
 
   <div class="container">
 
+    <!-- +++ begin check-in modals -->
+
+    <!-- Large modal -->
+
+<!--     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="check_in_modal_1">
+ -->            
+            <!-- dropdown to say who I am -->
+<!--             <select name="which_invitee" id="which_invitee_dropdown" class="form-control newFormSelect input-sm">
+              <option selected="selected">Who Am I?</option>
+              <option value="invitee one">Invitee One</option>
+            </select>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="check_in_modal_2">
+ -->            
+            <!-- choice of free days -->
+<!--             <h4>choice of free days</h4>
+            <button id="can_make_it">I Can Make It These Days</button>
+            <button id="cant_make_it">I Can't Make It</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="check_in_modal_3">
+ -->            
+            <!-- list of activities with voting -->
+<!--             <h4>Which Activities Would You Prefer?</h4>
+            <ul id="activities_modal_list"></ul>
+
+        </div>
+      </div>
+    </div>
+ -->
+
+    <!-- +++ end check-in modals -->
+
+
 
     <!-- +++++ this begins the splash page view -->
-    <!-- <div class="page-wrap"> -->
 
+    <div class="splash_view noshow">
 
-    <div class="splash_view">
       <div class="row">
         <div class="col-md-24">
           <h1 class="center">free<span>Day</span></h1>
@@ -44,22 +94,21 @@
       <nav>
         <div class="row">
           <div class="col-md-4 col-md-offset-8" id="create_button">
-            <a href="#" id="create_link">
+            <a href="#">
               <img src="./images/create_icon.png" onMouseOver="createMouseRollover(this)" onMouseOut="createMouseOut(this)" class= "center-block">
               <h5 class="center">Create an Event</h5>
             </a>
           </div>
-
           <div class="col-md-4" id="participate_button">
-            <a href="#" id="join_link">
+            <a href="#">
               <img src="./images/join_icon.png" onMouseOver="joinMouseRollover(this)" onMouseOut="joinMouseOut(this)" class= "center-block">
               <h5 class="center">Join an Event</h5>
             </a>
 <!--             <select name="which_event" id="which_event_dropdown" class="form-control newFormSelect input-sm">
               <option selected="selected">Select which event</option>
               <option value="event one">Mariachi</option>
-            </select> -->          
-          </div>
+            </select>
+ -->          </div>
         </div>
       </nav>
 
@@ -70,8 +119,7 @@
 
     <!-- +++ begin create an event view -->
 
-    <div class="create_event_view noshow">
-
+    <section class="create_event_view ">
 
       <div class="row header">
         <!-- page rubric -->
@@ -84,11 +132,10 @@
         <div class="col-md-16 top_nav">
           <nav>
             <ul>
-              <li id="nav_home">Home</li>
-              <li id="nav_create">Create an event</li>
-              <li id="nav_join">Join an event</li>
-              <li id="nav_about">About freeDay</li>
-              <li id="nav_contact">Contact</li>
+              <li>Home</li>
+              <li>Create an event</li>
+              <li>Join an event</li>
+              <li>About</li>
             </ul>
           </nav>
         </div>
@@ -99,72 +146,62 @@
         <!-- event name and date -->
         <!-- <div class="col-md-8 col-md-offset-4"> -->
           <form>
-            <label>Organizer name:</label>
-            <input id="creator_name" name="name" type="text" placeholder="Your name">
-          </form>
-          <form>
             <label>Event Name:</label>
             <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls">
-          </form>
-          <form>
             <label>Zipcode:</label>
             <input id="event_zip" name="zipcode" type="text" placeholder="zipcode here">
-          <!-- datePicker -->
-          <label for="from">Pick Dates:</label>
-          <input type="text" id="dates" name="from">
           </form>
-
-          
         <!-- </div> -->
 
         <!-- <div class="col-md-12"> -->
-
+          <form>
+            <label>Choose Dates:</label>
+            <input id="event_date" name="date" type="datetime-local">
+          </form>
+        <!-- </div> -->
+      <!-- </div> -->
 
       <!-- <div class="row"> -->
         <!-- invite peopls and add people -->
         <!-- <div class="col-md-12"> -->
-          <h3>Invite Friends:</h3>
+          <h3>Invite People:</h3>
           <ul id="known_people">
           </ul>
         <!-- </div> -->
         <!-- <div class="col-md-12"> -->
-          <h3>Add Invitees</h3>
+          <h3>Somebody Else?</h3>
           <form id="new_person">
             <label>Name:</label>
             <input id="new_person_name" type="text" name="name">
-            <br>
-            <button class="add_invitee_button">Add Friend</button>
-            <br>
             <button class="create_button">Submit</button>
           </form>
         <!-- </div> -->
       <!-- </div> -->
 
-    </div>
+    </section>
 
     <!-- +++ end create an event view -->
 
 
 
     <!-- +++ begin individual event view -->
+    <section class="indivual_event_view noshow">
 
-    <div class="dashboard_view noshow">
       <div class="row header">
         <!-- page rubric -->
         <div class="col-md-8">
           <h2>free<span>Day</span></h2>
-          <h3>Marx Brothers Reunion Dashboard</h3>
+          <h3>About this event</h3>
         </div>
     
         <!-- top nav -->
         <div class="col-md-16 top_nav">
           <nav>
             <ul>
-              <li id="nav_home">Home</li>
-              <li id="nav_create">Create an event</li>
-              <li id="nav_join">Join an event</li>
-              <li id="nav_about">About freeDay</li>
-              <li id="nav_contact">Contact</li>
+              <li>Home</li>
+              <li>Create an event</li>
+              <li>Join an event</li>
+              <li>About</li>
             </ul>
           </nav>
         </div>
@@ -180,64 +217,30 @@
             <h4>Possible Activities</h4>
             <ul></ul>
           </div>
+          <div class="col-md-2">
+            <form id="check_in">
+              <label>Invited? Check In!</label>
+              <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Check In</button>
+            </form>
+          </div>
           <div class="col-md-8">
             <ul id="event_list"></ul>
           </div>
         </div>
       </main>
+
+
     </div>  
+  </section>
+    <!-- +++ end individual event view -->
 
-<!-- +++ end individual event view -->
 
-<div class="join_view noshow" id="join_link">
-  <div class="row header">
-    <div class="col-md-8">
-      <h2>free<span>Day</span></h2>
-      <h3>Invitees: Join Your Event Here</h3>
-    </div>
-  </div>
 
-    <div class="col-md-16 top_nav">
-      <nav>
-        <ul>
-              <li id="nav_home">Home</li>
-              <li id="nav_create">Create an event</li>
-              <li id="nav_join">Join an event</li>
-              <li id="nav_about">About freeDay</li>
-              <li id="nav_contact">Contact</li>
-        </ul>
-      </nav>
-    </div>
-    <section class="join_or_decline_page noshow">
-    <div class="col-md-11">
-      <h2>Organizer name: Groucho Marx</h2>
-      <h3>Event name: Marx Brothers Reunion</h3>
-    </div>
-
-    <div class="join_decline_buttons">
-    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Yes, I'm going!</button>
-    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">I'm sorry I cannot attend!</button>
-  </div>
-</section>
- <!-- +++ end join or decline invitation view -->
-  <section class="decline_join_page show">
-    <div class="col-md-11">
-      <h2>Oh well, we'll miss you!</h2>
-      <a href="/create">Create An Event</a>
-      <a href="/splash">Home</a>
-    </div>
-    </section>
-    <!-- +++ end decline to join event page -->
-    <section class="about show">
-    <div class="col-md-11">
-      <h2>About FreeDay</h2>
-      <p></p>
-    </div>
-    </section>
+    
 
     <!-- footer -->
-<!--     <footer>
-        <div class="row">
+    <footer>
+      <div class="row">
         <div class="col-md-24">
           <nav>
             <ul>
@@ -247,11 +250,11 @@
             </ul>
           </nav>
         </div>
-    </div>
+      </div>
     </footer>
- -->
 
 
+  </div>
   <!-- end of container -->
 </body>
 
