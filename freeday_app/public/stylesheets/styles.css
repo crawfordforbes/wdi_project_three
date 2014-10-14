@@ -9,7 +9,7 @@ html, body {
 	font-family: 'Fresca', sans-serif;
 	background-color: #2980b9;
 	height: 100%;
-	color: White;
+	color: white;
 }
 
 h1 {
@@ -42,12 +42,21 @@ h5 {
 }
 
 input {
-	background-color: #2980b9;
+/*	background-color: #2980b9;
+*/
+color:black;
 }
 
 a {
 	text-decoration: none;
 	color: white;
+}
+
+button {
+padding: 5px;
+color: white;
+background-color: #999;
+border-radius: 5px;
 }
 
 a:hover {
@@ -136,11 +145,6 @@ footer {
 	background-color: #2980b9;
 	color: #ccc;
 	
-}
-
-
-button {
-	background-color: #0D5B8F;
 }
 
 body > div#ui-datepicker-div {
