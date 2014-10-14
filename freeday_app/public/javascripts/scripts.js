@@ -203,3 +203,22 @@ function createActivityList() {
 }
 
 $(window).load(createActivityList)
+
+
+function getActivities() {
+  var div = $("#activityButton")
+  var button = document.createElement("button")
+  button.innerText = ("PUSH ME")
+  div.append(button)
+  button.addEventListener("click", function(){
+    $.ajax({
+      type: "POST",
+      url: "http://127.0.0.1:4567/activities",
+      success: function(data) {
+      console.log("BUTTON PUSHED")
+      }
+    })
+  })
+}
+
+$(window).load(getActivities)
