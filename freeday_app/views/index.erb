@@ -25,6 +25,7 @@
 
 <body>
 
+<!-- a message for brenda here -->
 
   <div class="container">
 
@@ -32,8 +33,8 @@
     <!-- +++++ this begins the splash page view -->
     <!-- <div class="page-wrap"> -->
 
-    <div class="splash_view">
 
+    <div class="splash_view">
       <div class="row">
         <div class="col-md-24">
           <h1 class="center">free<span>Day</span></h1>
@@ -44,21 +45,22 @@
       <nav>
         <div class="row">
           <div class="col-md-4 col-md-offset-8" id="create_button">
-            <a href="#">
+            <a href="#" id="create_link">
               <img src="./images/create_icon.png" onMouseOver="createMouseRollover(this)" onMouseOut="createMouseOut(this)" class= "center-block">
               <h5 class="center">Create an Event</h5>
             </a>
           </div>
+
           <div class="col-md-4" id="participate_button">
-            <a href="#">
+            <a href="#" id="join_link">
               <img src="./images/join_icon.png" onMouseOver="joinMouseRollover(this)" onMouseOut="joinMouseOut(this)" class= "center-block">
               <h5 class="center">Join an Event</h5>
             </a>
 <!--             <select name="which_event" id="which_event_dropdown" class="form-control newFormSelect input-sm">
               <option selected="selected">Select which event</option>
               <option value="event one">Mariachi</option>
-            </select>
- -->          </div>
+            </select> -->          
+          </div>
         </div>
       </nav>
 
@@ -69,7 +71,8 @@
 
     <!-- +++ begin create an event view -->
 
-    <section class="create_event noshow">
+    <div class="create_event_view noshow">
+
 
       <div class="row header">
         <!-- page rubric -->
@@ -106,14 +109,16 @@
           <form>
             <label>Zipcode:</label>
             <input id="event_zip" name="zipcode" type="text" placeholder="zipcode here">
+          <!-- datePicker -->
+          <label for="from">Pick Dates:</label>
+          <input type="text" id="dates" name="from">
           </form>
+
+          
         <!-- </div> -->
 
         <!-- <div class="col-md-12"> -->
 
-          <!-- datePicker -->
-          <label for="from">Pick Dates:</label>
-          <input type="text" id="dates" name="from">
 
       <!-- <div class="row"> -->
         <!-- invite peopls and add people -->
@@ -135,7 +140,7 @@
         <!-- </div> -->
       <!-- </div> -->
 
-    </section>
+    </div>
 
     <!-- +++ end create an event view -->
 
@@ -143,7 +148,7 @@
 
     <!-- +++ begin individual event view -->
 
-       <section class="event_dashboard noshow">
+    <div class="dashboard_view noshow">
       <div class="row header">
         <!-- page rubric -->
         <div class="col-md-8">
@@ -180,11 +185,10 @@
         </div>
       </main>
     </div>  
-</section>
 
 <!-- +++ end individual event view -->
 
-<section class="join_page noshow">
+<div class="join_view noshow" id="join_link">
   <div class="row header">
     <div class="col-md-8">
       <h2>free<span>Day</span></h2>
@@ -207,6 +211,7 @@
       <h2>Organizer name: Groucho Marx</h2>
       <h3>Event name: Marx Brothers Reunion</h3>
     </div>
+
     <div class="join_decline_buttons">
     <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Yes, I'm going!</button>
     <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">I'm sorry I cannot attend!</button>

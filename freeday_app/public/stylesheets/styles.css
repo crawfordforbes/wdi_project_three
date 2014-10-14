@@ -142,3 +142,7 @@ footer {
 button {
 	background-color: #0D5B8F;
 }
+
+body > div#ui-datepicker-div {
+	display: none; 	
+} 
