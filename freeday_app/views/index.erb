@@ -100,6 +100,7 @@
           <p><label>Event Name:</label>
             <input id="event_name" name="name" type="text" placeholder="Brunch with the Girls"></p>
             <p><label>Zip Code:</label>
+<<<<<<< HEAD
               <input id="event_zip" name="zipcode" type="text" placeholder="Zip Code"></p>
               <!-- datePicker -->
               <p><label>Pick Dates:</label>
@@ -228,6 +229,135 @@
               </section>
 
               <!-- footer -->
+=======
+            <input id="event_zip" name="zipcode" type="text" placeholder="Zip Code"></p>
+          <!-- datePicker -->
+          <p><label>Pick Dates:</label>
+          <input type="text" id="dates" name="from"></p>
+          </form>
+
+          
+        <!-- </div> -->
+
+        <!-- <div class="col-md-12"> -->
+
+
+      <!-- <div class="row"> -->
+        <!-- invite peopls and add people -->
+        <!-- <div class="col-md-12"> -->
+          <h3>Invite Friends:</h3>
+          <div id="peopleDropDown">
+          </div>
+        <!-- </div> -->
+        <!-- <div class="col-md-12"> -->
+          <h3>Add Invitees:</h3>
+          <form id="new_person">
+            <label>Name:</label>
+            <input id="new_person_name" type="text" name="name">
+            <br>
+            <button class="add_invitee_button">Add Friend</button>
+            <button class="create_button">Submit</button>
+          </form>
+        <!-- </div> -->
+      <!-- </div> -->
+
+    </div>
+
+    <!-- +++ end create an event view -->
+
+
+
+    <!-- +++ begin individual event view -->
+
+    <div class="dashboard_view noshow">
+      <div class="row header">
+        <!-- page rubric -->
+        <div class="col-md-8">
+          <h2>free<span>Day</span></h2>
+          <h3>Marx Brothers Reunion Dashboard</h3>
+        </div>
+    
+        <!-- top nav -->
+        <div class="col-md-16 top_nav">
+          <nav>
+            <ul>
+              <li id="nav_home">Home</li>
+              <li id="nav_create">Create an event</li>
+              <li id="nav_join">Join an event</li>
+              <li id="nav_about">About freeDay</li>
+              <li id="nav_contact">Contact</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <main>
+        <div class="row"> 
+          <div class="col-md-3" id="invitee_list">
+            <h4>Who's Invited</h4>
+            <ul></ul>
+          </div>
+          <div class="col-md-11" id="activity_list">
+            <h4>Possible Activities</h4>
+            <ul></ul>
+          </div>
+          <div class="col-md-8">
+            <ul id="event_list"></ul>
+          </div>
+        </div>
+      </main>
+    </div>  
+
+<!-- +++ end individual event view -->
+
+<div class="join_view noshow" id="join_link">
+  <div class="row header">
+    <div class="col-md-8">
+      <h2>free<span>Day</span></h2>
+      <h3>Invitees: Join Your Event Here</h3>
+    </div>
+  </div>
+
+    <div class="col-md-16 top_nav">
+      <nav>
+        <ul>
+              <li id="nav_home">Home</li>
+              <li id="nav_create">Create an event</li>
+              <li id="nav_join">Join an event</li>
+              <li id="nav_about">About freeDay</li>
+              <li id="nav_contact">Contact</li>
+        </ul>
+      </nav>
+    </div>
+    <section class="join_or_decline_page noshow">
+    <div class="col-md-11">
+      <h2>Organizer name: Groucho Marx</h2>
+      <h3>Event name: Marx Brothers Reunion</h3>
+    </div>
+
+    <div class="join_decline_buttons">
+    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Yes, I'm going!</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">I'm sorry I cannot attend!</button>
+  </div>
+</section>
+ <!-- +++ end join or decline invitation view -->
+  <section class="decline_join_page show">
+    <div class="col-md-11">
+      <h2>Oh well, we'll miss you!</h2>
+      <a href="/create">Create An Event</a>
+      <a href="/splash">Home</a>
+    </div>
+    </section>
+    <!-- +++ end decline to join event page -->
+    <section class="about noshow">
+    <div class="col-md-11">
+      <h2>About FreeDay</h2>
+      <p></p>
+    </div>
+    </section>
+
+    <!-- footer -->
+>>>>>>> 9eecb98717b12baae9826e11adbfba787090fee2
 <!--     <footer>
         <div class="row">
         <div class="col-md-24">
