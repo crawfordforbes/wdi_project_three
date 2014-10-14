@@ -18,8 +18,16 @@
 
 $(function(){
 
+
 // all this is for the calendar
 
+$('#nav_home').on('click', function(e) {
+  e.preventDefault();
+  console.log("this button clicked");
+  $('div.splash_view').removeClass('noshow');
+  $('div.create_event_view').addClass('noshow');
+  $('div.dashboard_view').addClass('noshow');
+});
 
 
 $('#create_link, #nav_create').on('click', function(e) {
@@ -45,7 +53,6 @@ $('#join_link, #nav_join').on('click', function(e){
   $('div.dashboard_view').removeClass('noshow');
   $('div.splash_view').addClass('noshow');
   $('div.create_event_view').addClass('noshow');
-
 })
 
 
@@ -101,7 +108,7 @@ function dropdownEvents() {
   })
 }
 
-// add id "eventDropDown" to element to make this list appear
+// add id "peopleDropDown" to element to make this list appear
 
 function dropdownPeople() {
   $.ajax({
@@ -166,9 +173,6 @@ function dropdownDates() {
 
 
 
-$(window).load(dropdownDates)
-$(window).load(dropdownPeople)
-$(window).load(dropdownEvents)
 
 function createActivityList() {
   $.ajax({
@@ -192,7 +196,7 @@ function createActivityList() {
         var urlLi = document.createElement("li")
         var url = document.createElement("a")
         url.setAttribute("href", data[i]["url"])
-        url.innerText = data[i]["url"]
+        url.innerText = ("Click here for tickets!")
         var ul = document.getElementById("masterActivityList")
         ul.appendChild(name)
         ul.appendChild(address)
@@ -224,3 +228,7 @@ function getActivities() {
 }
 
 $(window).load(getActivities)
+  
+$(window).load(dropdownDates)
+$(window).load(dropdownPeople)
+$(window).load(dropdownEvents)
