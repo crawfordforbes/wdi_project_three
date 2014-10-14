@@ -9,7 +9,7 @@ html, body {
 	font-family: 'Fresca', sans-serif;
 	background-color: #2980b9;
 	height: 100%;
-	color: White;
+	color: white;
 }
 
 h1 {
@@ -42,7 +42,9 @@ h5 {
 }
 
 input {
-	background-color: #2980b9;
+/*	background-color: #2980b9;
+*/
+color:black;
 }
 
 a {
