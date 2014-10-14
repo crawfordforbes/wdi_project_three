@@ -1,5 +1,5 @@
 require_relative './db/connection.rb'
-require_relative '/db/models.rb'
+require_relative './db/models.rb'
 
 # Event.delete_all
 # Activity.delete_all
